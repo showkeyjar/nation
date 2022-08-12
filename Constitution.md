@@ -7,7 +7,7 @@ have fun!
 
 ## 1. Development Law
 
-  Human develop their technology to make life better, so I suggest development low for the first rule of Constitution.
+  Human develop their technology to make life better, so I suggest development law for the first rule of Constitution.
 
   rule 1: People can develop any technology to earn money that has benefit for legitimate use.
 
@@ -19,8 +19,8 @@ have fun!
 
   ### why?
 
-  because unified service is good for human society progress, and monopoly hinders progress, we can use state apparatus to avoid it.
+  because unified service is good for human society progress, and monopoly hinders progress, we can use state apparatus to avoid it. In the case of monopoly, unnecessary new competition leads to waste of human resources.
 
-  ### but how to protect the creative spirit?
+  ### how to protect the creative spirit?
 
   the repricing technology not only has cost, but also has profit, the nation can decide proportion of allocation to creator. 
