@@ -17,6 +17,8 @@ have fun!
 
   rule 4: If a technology is nationalized, the nation obliged to serve it to everyone.
 
+  rule 5: If a technology is a standard that needs to be enforced, everyone is obliged to perform it.
+
   ### why?
 
   because unified service is good for human society progress, and monopoly hinders progress, we can use state apparatus to avoid it. In the case of monopoly, unnecessary new competition leads to waste of human resources.
