@@ -24,6 +24,10 @@ Every line of law must well-founded: vote or data science to verify.
 
 And the designers can not be vested interests.
 
+Judgment on the nature of monopoly: Once it is determined that it is a monopoly, open source will be carried out, so that the basic capabilities of human beings will accumulate and progress. Otherwise, once the monopoly falls, everything will have to start from scratch without accumulation.
+
+The so-called capital or communism is only a tool to realize the collective wisdom or progress of the society, and there is no need to form a hostile ideology. The overall goal is to stimulate people's initiative and serve the society.
+
 ## How to use?
 
 I have no idea now, maybe one day in feature, we can deploy it to a neutral country or place on earth or other plant?
