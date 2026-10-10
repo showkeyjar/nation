@@ -228,18 +228,22 @@ function checkLaw(law, ledger, schema) {
   const errs = [];
   validateSchema(meta, schema, 'law-meta', errs);
   for (const e of errs) ledger.error(path, metaLine, 'E002', e);
+  // Structural damage is reported above. The guards below let every undamaged
+  // part of a malformed file still be checked, instead of failing silently.
 
-  if (errs.length) return; // structural damage; later checks would be noise
+  // What later checks may safely assume
+  const articlesOk = Array.isArray(meta.articles);
+  const sunsetOk = !!meta.sunset && typeof meta.sunset === 'object';
 
   // Check 3 — id uniqueness and filename correspondence
   const expected = expectedIdFor(law.file);
-  if (expected && meta.id !== expected) {
+  if (expected && typeof meta.id === 'string' && meta.id !== expected) {
     ledger.error(path, metaLine, 'E003', `id "${meta.id}" does not correspond to filename (expected "${expected}")`);
   }
 
   // Check 1 (already guaranteed by extraction) + title vs H1
   const h1 = h1Title(law.text);
-  if (h1 !== null && h1 !== meta.title) {
+  if (h1 !== null && typeof meta.title === 'string' && h1 !== meta.title) {
     ledger.warn(path, 1, 'W003', `metadata title "${meta.title}" differs from H1 "${h1}"`);
   }
 
@@ -257,8 +261,8 @@ function checkLaw(law, ledger, schema) {
     heads.push({ id: m[1], title: m[2], line: i + 1 });
   }
   const headById = new Map(heads.map((h) => [h.id, h]));
-  const metaIds = new Map(meta.articles.map((a) => [a.id, a]));
-  for (const a of meta.articles) {
+  const metaIds = new Map((articlesOk ? meta.articles : []).map((a) => [a.id, a]));
+  for (const a of (articlesOk ? meta.articles : [])) {
     const h = headById.get(a.id);
     if (!h) {
       ledger.error(path, metaLine, 'E004', `article ${a.id} appears in metadata but has no "### ${a.id} — <title>" heading in the body`);
@@ -272,28 +276,65 @@ function checkLaw(law, ledger, schema) {
     }
   }
 
-  // Check 5 — evidence prefixes
-  for (const a of meta.articles) {
-    for (const ev of a.evidence) {
+  // Check 5 — evidence prefixes + resolvability of literature pointers.
+  // A data:/study:/model: pointer should carry a DOI, URL, code anchor or at
+  // least a year, so a reader can find what it refers to. Reported as ONE
+  // aggregated W008 warning per law (not one line per pointer) to keep the
+  // validator output readable; the full list is always in --json.
+  const RESOLVABLE = /(doi:|10\.\d{4,9}\/|https?:\/\/|\b(?:19|20)\d{2}\b|#|tools\/|docs\/)/;
+  const unresolvable = [];
+  for (const a of (articlesOk ? meta.articles : [])) {
+    for (const ev of a.evidence ?? []) {
       if (!EVIDENCE_PREFIXES.some((p) => ev.startsWith(p))) {
         ledger.error(path, metaLine, 'E005', `article ${a.id} evidence pointer "${ev}" does not start with one of: ${EVIDENCE_PREFIXES.join(' ')}`);
+      } else if (/^(data|study):/.test(ev) && !RESOLVABLE.test(ev)) {
+        unresolvable.push(a.id);
       }
     }
   }
   for (const p of meta.parameters || []) {
     if (!EVIDENCE_PREFIXES.some((pre) => p.evidence.startsWith(pre))) {
       ledger.error(path, metaLine, 'E005', `parameter ${p.name} evidence pointer "${p.evidence}" does not start with one of: ${EVIDENCE_PREFIXES.join(' ')}`);
+    } else if (/^(data|study):/.test(p.evidence) && !RESOLVABLE.test(p.evidence)) {
+      unresolvable.push(`param:${p.name}`);
     }
     if (typeof p.value === 'number' && (!p.unit || p.unit.trim() === '')) {
       ledger.warn(path, metaLine, 'W005', `parameter ${p.name} has a numeric value but no unit`);
+    }
+  }
+  if (unresolvable.length) {
+    ledger.warn(path, metaLine, 'W008', `${unresolvable.length} data:/study: pointer(s) are not resolvable (no doi, URL or year): ${[...new Set(unresolvable)].join(', ')}`);
+  }
+
+  // Check 9 — the "## Parameters" table mirrors the metadata, both directions
+  {
+    const paramNames = (meta.parameters || []).map((p) => p.name);
+    const tableNames = [];
+    const ls = law.text.split('\n');
+    const s = ls.findIndex((l) => /^## Parameters\s*$/.test(l));
+    if (s !== -1) {
+      let e = ls.length;
+      for (let i = s + 1; i < ls.length; i++) if (/^## /.test(ls[i])) { e = i; break; }
+      for (const l of ls.slice(s, e)) {
+        const m = /^\|\s*`([A-Za-z][A-Za-z0-9_]*)`\s*\|/.exec(l);
+        if (m) tableNames.push(m[1]);
+      }
+      for (const n of paramNames) {
+        if (!tableNames.includes(n)) ledger.error(path, metaLine, 'E009', `parameter "${n}" is in the metadata but missing from the "## Parameters" table`);
+      }
+      for (const n of tableNames) {
+        if (!paramNames.includes(n)) ledger.error(path, metaLine, 'E009', `parameter "${n}" is in the "## Parameters" table but not in the metadata`);
+      }
+    } else if (paramNames.length) {
+      ledger.warn(path, metaLine, 'W009', 'law declares parameters but has no "## Parameters" section');
     }
   }
 
   // Check 6 — ratification gate
   if (meta.status === 'ratified') {
     const pendings = [];
-    for (const a of meta.articles) {
-      for (const ev of a.evidence) if (ev.startsWith('pending:')) pendings.push(`${a.id}: ${ev}`);
+    for (const a of (articlesOk ? meta.articles : [])) {
+      for (const ev of a.evidence ?? []) if (ev.startsWith('pending:')) pendings.push(`${a.id}: ${ev}`);
     }
     for (const p of meta.parameters || []) {
       if (p.evidence.startsWith('pending:')) pendings.push(`param ${p.name}: ${p.evidence}`);
@@ -301,7 +342,7 @@ function checkLaw(law, ledger, schema) {
     if (pendings.length) {
       ledger.error(path, metaLine, 'E006', `RATIFICATION GATE: status is "ratified" but ${pendings.length} evidence pointer(s) are pending: ${pendings.join(' | ')}`);
     }
-    if (meta.sunset.expires === null) {
+    if (sunsetOk && meta.sunset.expires === null) {
       ledger.error(path, metaLine, 'E006', 'RATIFICATION GATE: status is "ratified" but sunset.expires is null');
     }
   }
@@ -313,11 +354,13 @@ function checkLaw(law, ledger, schema) {
   if (!meta.dissent || meta.dissent.length === 0) {
     ledger.warn(path, metaLine, 'W002', 'dissent is empty — record the strongest objection to this law');
   }
-  const last = meta.history[meta.history.length - 1];
-  if (last && last.version !== meta.version) {
-    ledger.warn(path, metaLine, 'W006', `version ${meta.version} differs from last history entry ${last.version}`);
+  if (Array.isArray(meta.history) && meta.history.length) {
+    const last = meta.history[meta.history.length - 1];
+    if (last && last.version !== meta.version) {
+      ledger.warn(path, metaLine, 'W006', `version ${meta.version} differs from last history entry ${last.version}`);
+    }
   }
-  if (meta.sunset.review_every_years > 10) {
+  if (sunsetOk && meta.sunset.review_every_years > 10) {
     ledger.warn(path, metaLine, 'W007', `sunset.review_every_years = ${meta.sunset.review_every_years} exceeds 10`);
   }
 }

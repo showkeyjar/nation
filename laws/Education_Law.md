@@ -1,6 +1,6 @@
 # Education Law (教育法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C9, C14, C22, C26, C27, C31, C32 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.2, §3 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §6
 > The floor's slowest component and the commons' fastest multiplier.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.education",
   "title": "Education Law (教育法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["floor", "commons"],
@@ -16,7 +16,7 @@
   "articles": [
     { "id": "EDU1", "title": "The entitlement", "evidence": ["data:fee-free vs. debt-financed enrolment and completion by income decile"], "falsifier": "If completion for the lowest decile does not improve under fee-free provision, the barrier is not fees and must be located with evidence." },
     { "id": "EDU2", "title": "Competency framework, not curriculum script", "evidence": ["study:outcome effects of autonomy vs. scripted curricula"], "falsifier": "If framework autonomy produces worse outcomes than scripted curricula for defined cohorts, a scripted floor may be set for foundational literacy and numeracy only." },
-    { "id": "EDU3", "title": "Materials are commons", "evidence": ["study:open textbook adoption and cost outcomes"], "falsifier": "If commons materials underperform commercial materials on measured learning, the maintenance endowment must be raised before any purchase of proprietary materials." },
+    { "id": "EDU3", "title": "Materials are commons", "evidence": ["study:Hilton 2016 (Review of Educational Research, Open Educational Resources and College Textbook Choices): comparable learning outcomes, large cost savings"], "falsifier": "If commons materials underperform commercial materials on measured learning, the maintenance endowment must be raised before any purchase of proprietary materials." },
     { "id": "EDU4", "title": "Verifiable open credentials", "evidence": ["pending:credential verification volume and employer use"], "falsifier": "If employers systematically do not verify open credentials, the verification route is unusable and must be rebuilt rather than marketed." },
     { "id": "EDU5", "title": "Vocational parity", "evidence": ["data:vocational route status, funding and employment outcomes"], "falsifier": "If vocational parity in funding does not close employment and earnings gaps within two cohorts, parity must extend to governance and facilities." },
     { "id": "EDU6", "title": "Lifelong entitlement", "evidence": ["pending:adult take-up of funded hours by age band"], "falsifier": "If take-up concentrates in those already credentialed, entitlement design must change (portability, timing, guidance) before the hours are cut." },
@@ -54,7 +54,8 @@
     "What is the floor for self-directed learning at home, and who assesses it?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: entitlement, competency framework, commons materials, open credentials, vocational parity, lifelong entitlement, automatic retraining, teacher autonomy, no child surveillance, special needs right, anti-indoctrination, teaching duty." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: entitlement, competency framework, commons materials, open credentials, vocational parity, lifelong entitlement, automatic retraining, teacher autonomy, no child surveillance, special needs right, anti-indoctrination, teaching duty." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -89,7 +90,7 @@
 
 **Rationale.** The population already paid for the materials once; and a commons of teaching materials is the cheapest known subsidy to every teacher who will ever teach the subject.
 
-**Evidence.** `study:` open textbook adoption and cost outcomes.
+**Evidence.** `study:` Hilton 2016 (Review of Educational Research, Open Educational Resources and College Textbook Choices): comparable learning outcomes, large cost savings.
 
 **Falsifier.** If commons materials underperform commercial materials on measured learning, the maintenance endowment must be raised before any purchase of proprietary materials.
 
@@ -229,3 +230,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: entitlement, competency framework, commons materials, open credentials, vocational parity, lifelong entitlement, automatic retraining, teacher autonomy, no child surveillance, special needs right, anti-indoctrination, teaching duty. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

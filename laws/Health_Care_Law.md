@@ -1,6 +1,6 @@
 # Health Care Law (医疗法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C14, C16–C20, C27, C30, C43 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.1, §2.3 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §6
 > The floor's most expensive component, and the clearest test of the pharmaceutical bargain.
 
@@ -8,13 +8,13 @@
 {
   "id": "law.health-care",
   "title": "Health Care Law (医疗法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["floor", "commons"],
   "summary": "Health care free at the point of use as an unconditional floor entitlement, funded from rents and the sovereign fund first. The pharmaceutical bargain: 7+2 year exclusivity windows, mandatory publication of trial data including negative results, advance purchase commitments as the main accelerator, buyout on the monopoly test with a capped creator share. Standing pandemic capacity as a pre-purchased mission rather than emergency improvisation. Parity for mental health. A published benefit package with rules preventing two-tier queue erosion. Immunity for honest error reporting and liability for concealment, with a public incident ledger. Health data as a privacy-protected commons. Workforce rules tied to training places and the right to useful work.",
   "articles": [
-    { "id": "HLT1", "title": "Free at the point of use", "evidence": ["study:user fees and utilisation abandonment effects"], "falsifier": "If point-of-use charges anywhere in the system measurably reduce timely utilisation by the poor, that charge has failed and must be removed." },
+    { "id": "HLT1", "title": "Free at the point of use", "evidence": ["study:Manning, Newhouse, Duan et al. 1987 (AER, Health Insurance and the Demand for Medical Care — RAND Health Insurance Experiment)"], "falsifier": "If point-of-use charges anywhere in the system measurably reduce timely utilisation by the poor, that charge has failed and must be removed." },
     { "id": "HLT2", "title": "Funding order", "evidence": ["data:rent and sovereign revenue vs. health cost in comparable economies"], "falsifier": "If the floor-first funding ranking leaves recurrent health funding structurally short, the ranking must be reopened rather than fees introduced." },
     { "id": "HLT3", "title": "The benefit package", "evidence": ["pending:annual package review with published cost-effectiveness analysis"], "falsifier": "If the package omits cost-effective care while including ineffective care in any published cycle, the review procedure has failed and must be rebuilt." },
     { "id": "HLT4", "title": "The two-tier rule", "evidence": ["data:public-private mix and waiting time divergence"], "falsifier": "If private top-up grows while public waiting times lengthen for the same procedures, the two-tier rule has failed and the exit of clinicians from public practice must be constrained." },
@@ -56,7 +56,8 @@
     "Does the underserved incentive multiple distort care quality toward volume?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: free at point of use, funding order, benefit package, two-tier rule, pharmaceutical bargain, trial publication, pre-commitment, pandemic capacity, prevention targets, mental health parity, error reporting, health data commons, workforce." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: free at point of use, funding order, benefit package, two-tier rule, pharmaceutical bargain, trial publication, pre-commitment, pandemic capacity, prevention targets, mental health parity, error reporting, health data commons, workforce." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -71,7 +72,7 @@
 
 **Rationale.** Every charge at the door is a filter, and the people it filters out are those for whom care is most valuable and least affordable — which is also where the externality is largest.
 
-**Evidence.** `study:` user fees and utilisation abandonment effects.
+**Evidence.** `study:` Manning, Newhouse, Duan et al. 1987 (AER, Health Insurance and the Demand for Medical Care — RAND Health Insurance Experiment).
 
 **Falsifier.** If point-of-use charges anywhere in the system measurably reduce timely utilisation by the poor, that charge has failed and must be removed.
 
@@ -242,3 +243,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: free at point of use, funding order, benefit package, two-tier rule, pharmaceutical bargain, trial publication, pre-commitment, pandemic capacity, prevention targets, mental health parity, error reporting, health data commons, workforce. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

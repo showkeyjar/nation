@@ -10,47 +10,66 @@ flowchart LR
   subgraph direction["direction"]
     law_defense["Defense Law (国防法)<br/>draft · 12 articles"]
     law_direction["Direction and Mission Law (宏观引导法)<br/>draft · 13 articles"]
+    law_environment["Environment and Resources Law (环境与资源法)<br/>draft · 11 articles"]
   end
   subgraph engine["engine"]
     law_capital-engine["Capital Engine Law (资本动力法)<br/>draft · 15 articles"]
+    law_currency["Currency Law (货币法)<br/>draft · 10 articles"]
     law_development["Development Law (技术发展与开源法)<br/>draft · 14 articles"]
     law_earn-and-pay["Earn and Pay Law (劳动与报酬法)<br/>draft · 12 articles"]
+    law_tax["Tax Law (税法)<br/>draft · 11 articles"]
   end
   subgraph commons["commons"]
     law_commons["Commons Law (全民共享法)<br/>draft · 12 articles"]
     law_development["Development Law (技术发展与开源法)<br/>draft · 14 articles"]
     law_education["Education Law (教育法)<br/>draft · 12 articles"]
+    law_environment["Environment and Resources Law (环境与资源法)<br/>draft · 11 articles"]
     law_health-care["Health Care Law (医疗法)<br/>draft · 13 articles"]
   end
   subgraph floor["floor"]
     law_civil["Civil Law (民法)<br/>draft · 10 articles"]
     law_community["Community Law (社区法)<br/>draft · 10 articles"]
+    law_criminal["Criminal Law (刑法)<br/>draft · 10 articles"]
     law_earn-and-pay["Earn and Pay Law (劳动与报酬法)<br/>draft · 12 articles"]
     law_education["Education Law (教育法)<br/>draft · 12 articles"]
     law_health-care["Health Care Law (医疗法)<br/>draft · 13 articles"]
+    law_immigration["Immigration and Residence Law (移民与居留法)<br/>draft · 10 articles"]
     law_marriage["Marriage Law (婚姻法)<br/>draft · 12 articles"]
     law_social-floor["Social Floor Law (社会兜底法)<br/>draft · 13 articles"]
+    law_tax["Tax Law (税法)<br/>draft · 11 articles"]
   end
   subgraph governance["governance"]
     law_civil["Civil Law (民法)<br/>draft · 10 articles"]
     law_community["Community Law (社区法)<br/>draft · 10 articles"]
     law_constitution["Constitution of the Open Nation<br/>draft · 48 articles"]
+    law_criminal["Criminal Law (刑法)<br/>draft · 10 articles"]
+    law_currency["Currency Law (货币法)<br/>draft · 10 articles"]
     law_defense["Defense Law (国防法)<br/>draft · 12 articles"]
     law_direction["Direction and Mission Law (宏观引导法)<br/>draft · 13 articles"]
+    law_elections["Elections and Referendums Law (选举与公投法)<br/>draft · 10 articles"]
+    law_immigration["Immigration and Residence Law (移民与居留法)<br/>draft · 10 articles"]
     law_marriage["Marriage Law (婚姻法)<br/>draft · 12 articles"]
+    law_transition["Transition Law (过渡法)<br/>draft · 10 articles"]
   end
   law_capital-engine --> law_constitution
   law_civil --> law_constitution
   law_commons --> law_constitution
   law_community --> law_constitution
+  law_criminal --> law_constitution
+  law_currency --> law_constitution
   law_defense --> law_constitution
   law_development --> law_constitution
   law_direction --> law_constitution
   law_earn-and-pay --> law_constitution
   law_education --> law_constitution
+  law_elections --> law_constitution
+  law_environment --> law_constitution
   law_health-care --> law_constitution
+  law_immigration --> law_constitution
   law_marriage --> law_constitution
   law_social-floor --> law_constitution
+  law_tax --> law_constitution
+  law_transition --> law_constitution
   law_civil -.-> law_capital-engine-law
   law_civil -.-> law_development-law
   law_commons -.-> law_development-law
@@ -62,7 +81,16 @@ flowchart LR
   law_education -.-> law_development-law
   law_education -.-> law_capital-engine-law
   law_education -.-> law_earn-and-pay-law
+  law_elections -.-> law_community-law
+  law_environment -.-> law_tax-law
+  law_environment -.-> law_currency-law
+  law_environment -.-> law_health-care-law
+  law_environment -.-> law_defense-law
   law_health-care -.-> law_capital-engine-law
   law_health-care -.-> law_development-law
   law_health-care -.-> law_commons-law
+  law_immigration -.-> law_education-law
+  law_immigration -.-> law_earn-and-pay-law
+  law_tax -.-> law_environment-law
+  law_tax -.-> law_commons-law
 ```

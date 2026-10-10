@@ -3,7 +3,7 @@
 **宏观引导 + 资本动力 + 社会兜底 —— 一个让社会更快学习的三支柱模型**
 
 > Version 0.2.0 · 2026-10-10 · Status: **draft blueprint（草案蓝图）**
-> 本文为 [FRAMEWORK.md](./FRAMEWORK.md) 的中文版；如有歧义，以英文版为准。
+> 本文为 [FRAMEWORK.md](./FRAMEWORK.md) 的**翻译快照**（对应英文版 0.2.0，2026-10-10）；英文版更新后本文即过期，以英文版为准——校验器不跟踪翻译漂移，这一行是唯一的契约。
 > 宪法基础：[Constitution.md](./Constitution.md) · 立法与修法流程：[GOVERNANCE.md](./GOVERNANCE.md)
 
 ---

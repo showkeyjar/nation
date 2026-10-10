@@ -1,6 +1,6 @@
 # Constitution of the Open Nation
 
-> **Version 0.2.0 (draft)** · 2026-10-10 · Status: **draft, open for deliberation**
+> **Version 0.2.1 (draft)** · 2026-10-10 · Status: **draft, open for deliberation**
 > Canonical language: English. 中文框架说明见 [FRAMEWORK.zh-CN.md](./FRAMEWORK.zh-CN.md)。
 > This document is not a state. It is a forkable blueprint. Fork it, test it, falsify it.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.constitution",
   "title": "Constitution of the Open Nation",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["governance"],
@@ -33,7 +33,7 @@
     { "id": "C17", "title": "Pre-commitment as the state's main lever", "evidence": ["study:advance market commitments and prize outcomes (e.g. pneumococcal AMC)"], "falsifier": "If advance purchase commitments systematically overpay relative to their measured acceleration of delivery, they must be replaced by smaller prizes plus open procurement." },
     { "id": "C18", "title": "Monopoly test and nationalization", "evidence": ["data:markup, entry-barrier and market-share thresholds calibrated against known monopoly cases"], "falsifier": "If the test flags competitive markets as monopolies, or misses durable monopolies, the thresholds must be recalibrated or the test replaced by a structural-entry test." },
     { "id": "C19", "title": "Commons release is the default end state", "evidence": ["study:diffusion speed after patent expiry, compulsory licensing and open-sourcing events"], "falsifier": "If commons release reduces the maintained quality of a capability below its private baseline for more than one review period, a maintenance endowment must be attached by default." },
-    { "id": "C20", "title": "Creator and investor share", "evidence": ["pending:creator-share response measurement in pilot (the illustrative model does not vary the creator share)"], "falsifier": "If creator shares above 10% of realized value do not increase subsequent invention rates, shares should fall to the level that keeps inventors at least as well off as an equivalent salaried career." },
+    { "id": "C20", "title": "Creator and investor share", "evidence": ["pending:creator-share effort response measurement in pilot — the model's creator-share sweep puts the in-cap optimum at this cap, but only under an ASSUMED effort response that has never been measured", "model:tools/simulate.mjs#sweep=beta"], "falsifier": "If creator shares above 10% of realized value do not increase subsequent invention rates, shares should fall to the level that keeps inventors at least as well off as an equivalent salaried career." },
     { "id": "C21", "title": "Capital mobility and erosion control", "evidence": ["data:capital flight response to expropriation vs. to rule-based buyouts"], "falsifier": "If rule-based buyouts with fair valuation still trigger net capital flight exceeding the value of the commons released, compensation terms are insufficient." },
     { "id": "C22", "title": "Publicly funded research is public", "evidence": ["study:open-access mandates and their effect on follow-on citation and commercialization"], "falsifier": "If open-by-default public research reduces the rate at which it is commercialized in a domain, that domain may need a short exclusivity window instead of immediate release." },
     { "id": "C23", "title": "Data commons and open standards", "evidence": ["data:GDP cost of standards fragmentation and interoperability failures"], "falsifier": "If mandatory open standards slow the adoption of better protocols in fast-moving domains beyond the measured interoperability gain, standards must become voluntary there." },
@@ -89,7 +89,8 @@
   ],
   "history": [
     { "version": "0.1.0", "date": "2022-08-13", "change": "Seed: Development Law with five rules on technology, monopoly, nationalization and standards." },
-    { "version": "0.2.0", "date": "2026-10-10", "change": "Restructured into eight chapters; added instrument doctrine, Five Lines evidence rule, steering layer, capital engine, commons layer, social floor, feedback ledger, governance and staged adoption. Operations moved to laws/." }
+    { "version": "0.2.0", "date": "2026-10-10", "change": "Restructured into eight chapters; added instrument doctrine, Five Lines evidence rule, steering layer, capital engine, commons layer, social floor, feedback ledger, governance and staged adoption. Operations moved to laws/." },
+    { "version": "0.2.1", "date": "2026-10-10", "change": "Evidence corrections and register update, no rule text changed: seven laws added to the register (tax, currency, elections, criminal, immigration, environment, transition); C3 and C20 evidence pointers corrected (C20 now cites the simulation's creator-share sweep and keeps its pending anchor); C46 links the pilot charter." }
   ]
 }
 ```
@@ -325,7 +326,7 @@ Everything else in this document exists to make that sentence operational and fa
 
 **Rationale.** "The repricing technology not only has cost, but also has profit, the nation can decide proportion of allocation to creator." Inventors must not be punished for having served the public.
 
-**Evidence.** `pending:` creator-share response measurement in pilot (the illustrative model does not vary the creator share).
+**Evidence.** `pending:` creator-share effort response measurement in pilot — the model's [creator-share sweep](./docs/SIMULATION.md) puts the in-cap optimum at this cap, but only under an ASSUMED effort response (η_β) that has never been measured; the sweep's stress case (β = 0.20) beats every in-cap setting, so the cap is defended by the falsifier, not by the model. `model:` tools/simulate.mjs#sweep=beta.
 
 **Falsifier.** If creator shares above 10% of realized value do not increase subsequent invention rates, shares should fall to the level that keeps inventors at least as well off as an equivalent salaried career.
 
@@ -609,7 +610,7 @@ Everything else in this document exists to make that sentence operational and fa
 
 **Claim.** Stage 1 is a small real jurisdiction — a community, district or chartered zone of roughly 10,000 to 1,000,000 people — operating this framework under a host state's law, with pre-registered hypotheses, published results including failures, and a guaranteed right of exit for every resident.
 
-**Rationale.** The framework's disagreements are empirical, and only a pilot can settle them. Small enough to fail safely; large enough to be real.
+**Rationale.** The framework's disagreements are empirical, and only a pilot can settle them. Small enough to fail safely; large enough to be real. The charter template every pilot must complete is [docs/PILOT_CHARTER.md](./docs/PILOT_CHARTER.md).
 
 **Evidence.** `pending:` pre-registered pilot hypotheses and results, published including failures.
 
@@ -654,10 +655,17 @@ Everything else in this document exists to make that sentence operational and fa
 | Health Care Law (医疗法) | floor | [laws/Health_Care_Law.md](./laws/Health_Care_Law.md) |
 | Marriage Law (婚姻法) | governance, floor | [laws/Marriage_Law.md](./laws/Marriage_Law.md) |
 | Defense Law (国防法) | governance, direction | [laws/Defense_Law.md](./laws/Defense_Law.md) |
+| Tax Law (税法) | floor, engine | [laws/Tax_Law.md](./laws/Tax_Law.md) |
+| Currency Law (货币法) | engine, governance | [laws/Currency_Law.md](./laws/Currency_Law.md) |
+| Elections and Referendums Law (选举与公投法) | governance | [laws/Elections_Law.md](./laws/Elections_Law.md) |
+| Criminal Law (刑法) | governance, floor | [laws/Criminal_Law.md](./laws/Criminal_Law.md) |
+| Immigration and Residence Law (移民与居留法) | governance, floor | [laws/Immigration_Law.md](./laws/Immigration_Law.md) |
+| Environment and Resources Law (环境与资源法) | direction, commons | [laws/Environment_Law.md](./laws/Environment_Law.md) |
+| Transition Law (过渡法) | governance | [laws/Transition_Law.md](./laws/Transition_Law.md) |
 
 ## How to read and change this document
 
 1. Read [FRAMEWORK.md](./FRAMEWORK.md) for the architecture that these articles implement, and [GOVERNANCE.md](./GOVERNANCE.md) for how a rule becomes law.
 2. Every article carries metadata in the `law-meta` block at the top of this file. Metadata and headings are checked for consistency by `node tools/nation.mjs validate`.
 3. To propose a change, open an amendment in the Five Lines format. Proposals with `pending:` evidence are welcome as drafts; they may not be ratified.
-4. Nothing in this document is final. Version 0.2.0 exists to be attacked.
+4. Nothing in this document is final. Version 0.2.1 exists to be attacked.

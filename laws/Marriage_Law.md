@@ -1,6 +1,6 @@
 # Marriage Law (婚姻法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C27, C28, C32 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §5 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §6
 > Families as contracts between equals, with the floor underneath them.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.marriage",
   "title": "Marriage Law (婚姻法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["governance", "floor"],
@@ -18,7 +18,7 @@
     { "id": "MAR2", "title": "Who may marry", "evidence": ["vote:comparable jurisdictions' marriage equality records"], "falsifier": "None available: this article implements equal treatment before the law; it is entrenched by Constitution C6 and cannot be falsified by outcomes, only amended." },
     { "id": "MAR3", "title": "Consent and prohibition of coercion", "evidence": ["data:forced marriage prevalence and enforcement outcomes"], "falsifier": "If the annulment route is used in fewer than half of detected coercion cases, access must be moved out of the courts and into administrative declaration." },
     { "id": "MAR4", "title": "Equal treatment of family forms", "evidence": ["pending:take-up and outcome differentials by family form in the first pilot"], "falsifier": "If a form's equal treatment creates arbitrage that materially distorts tax or floor outcomes, the distortion must be fixed at the tax or floor rule, not by re-ranking the forms." },
-    { "id": "MAR5", "title": "Dissolution", "evidence": ["study:no-fault divorce regimes and post-separation outcomes"], "falsifier": "If no-fault dissolution worsens outcomes for the economically weaker party beyond the correction provided by MAR6, the formula is mis-set." },
+    { "id": "MAR5", "title": "Dissolution", "evidence": ["study:Stevenson & Wolfers 2006 (NBER WP 12044, Bargaining in the Shadow of the Law: Divorce Laws and Family Distress)"], "falsifier": "If no-fault dissolution worsens outcomes for the economically weaker party beyond the correction provided by MAR6, the formula is mis-set." },
     { "id": "MAR6", "title": "The asset-division formula", "evidence": ["data:post-separation income trajectories by gender and care share"], "falsifier": "If the care-work credit fails to close the post-separation gap for the caring party within ten years, the credit weight must be raised." },
     { "id": "MAR7", "title": "Children first, with their own voice", "evidence": ["study:child-inclusive proceedings and outcomes"], "falsifier": "If child-inclusive proceedings raise conflict duration without improving child outcomes, the child's participation must be limited to written representations." },
     { "id": "MAR8", "title": "The public child-support guarantee", "evidence": ["data:child support collection rates under public guarantee regimes"], "falsifier": "If the fund's recovery rate falls below its cost of administration for five consecutive years, recovery should be dropped and the payment absorbed as a child floor component." },
@@ -52,7 +52,8 @@
     "Does the care credit interact with the Earn and Pay pension credit in a way that double counts or double taxes?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: contract framing, capacity and consent, equal family forms, no-fault dissolution, division formula with care credit, child voice, public support guarantee, domestic violence rules, floor protection, inheritance defaults, housing continuity." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: contract framing, capacity and consent, equal family forms, no-fault dissolution, division formula with care credit, child voice, public support guarantee, domestic violence rules, floor protection, inheritance defaults, housing continuity." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -107,7 +108,7 @@
 
 **Rationale.** Requiring grounds manufactures perjury and conflict at the worst possible moment for any children involved.
 
-**Evidence.** `study:` no-fault divorce regimes and post-separation outcomes.
+**Evidence.** `study:` Stevenson & Wolfers 2006 (NBER WP 12044, Bargaining in the Shadow of the Law: Divorce Laws and Family Distress).
 
 **Falsifier.** If no-fault dissolution worsens outcomes for the economically weaker party beyond the correction provided by MAR6, the formula is mis-set.
 
@@ -225,3 +226,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: contract framing, capacity and consent, equal family forms, no-fault dissolution, division formula with care credit, child voice, public support guarantee, domestic violence rules, floor protection, inheritance defaults, housing continuity. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

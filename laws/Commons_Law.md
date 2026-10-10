@@ -1,6 +1,6 @@
 # Commons Law (全民共享法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C19, C22–C26, C30 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.2, §3 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §9
 > The transmission: how private results become public capability, stay alive, and pay a dividend.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.commons",
   "title": "Commons Law (全民共享法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["commons"],
@@ -20,7 +20,7 @@
     { "id": "COM4", "title": "The data commons", "evidence": ["study:open government data value vs. re-identification incidents"], "falsifier": "If the privacy-preserving pipeline degrades analytic value below the point of use, the defaults must be re-specified per data class." },
     { "id": "COM5", "title": "The reciprocity clause", "evidence": ["pending:first three years of reciprocity schedules and their disputes"], "falsifier": "If reciprocity reduces total market access or raises prices more than it increases commons contributions, it must be narrowed to dominant providers." },
     { "id": "COM6", "title": "Standards as commons", "evidence": ["study:FRAND outcomes and hold-up incidence"], "falsifier": "If capped royalties deter participation in standard-setting, the cap is mis-set for that domain." },
-    { "id": "COM7", "title": "The national dividend", "evidence": ["data:Alaska Permanent Fund and comparable distribution effects"], "falsifier": "If the dividend reduces aggregate investment more than it raises floor security and participation, it must shift toward a floor top-up." },
+    { "id": "COM7", "title": "The national dividend", "evidence": ["study:Jones & Marinescu 2018 (NBER WP 24307, The Labor Market Impacts of Universal and Permanent Cash Transfers: Alaska)"], "falsifier": "If the dividend reduces aggregate investment more than it raises floor security and participation, it must shift toward a floor top-up." },
     { "id": "COM8", "title": "The commons fund", "evidence": ["audit:fund sources and allocations vs. the published formula"], "falsifier": "If allocations deviate from the formula in more than one year in five, the formula is being gamed and must be hardened." },
     { "id": "COM9", "title": "Public code and public algorithms", "evidence": ["audit:share of decision algorithms published and contested"], "falsifier": "If publishing algorithms and models raises successful gaming of decisions more than it reduces error and bias, publication must be limited to auditors and the sortition chamber." },
     { "id": "COM10", "title": "The access duty", "evidence": ["audit:availability by region, language, disability, connectivity"], "falsifier": "If access gaps persist beyond the statutory deadline for any released capability, the delivery endowment must be raised automatically." },
@@ -55,7 +55,8 @@
     "How is criticality assigned, and by whom, before the first incident proves it?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: conversion routes, registry, maintenance duty, data commons, reciprocity, dividend, fund formula, public algorithms, access duty, anti-enclosure, metrics." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: conversion routes, registry, maintenance duty, data commons, reciprocity, dividend, fund formula, public algorithms, access duty, anti-enclosure, metrics." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -138,7 +139,7 @@
 
 **Rationale.** "Everyone owns the results" becomes a fact when it is also a payment; ownership that never reaches a person is a slogan.
 
-**Evidence.** `data:` Alaska Permanent Fund and comparable distribution effects.
+**Evidence.** `study:` Jones & Marinescu 2018 (NBER WP 24307, The Labor Market Impacts of Universal and Permanent Cash Transfers: Alaska).
 
 **Falsifier.** If the dividend reduces aggregate investment more than it raises floor security and participation, it must shift toward a floor top-up.
 
@@ -231,3 +232,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: conversion routes, registry, maintenance duty, data commons, reciprocity, dividend, fund formula, public algorithms, access duty, anti-enclosure, metrics. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

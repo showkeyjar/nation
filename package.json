@@ -9,7 +9,8 @@
     "validate": "node tools/nation.mjs validate",
     "index": "node tools/nation.mjs index",
     "graph": "node tools/nation.mjs graph",
-    "simulate": "node tools/simulate.mjs"
+    "simulate": "node tools/simulate.mjs",
+    "test": "node --test"
   },
   "engines": {
     "node": ">=18"

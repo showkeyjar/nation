@@ -17,6 +17,8 @@ jobs:
           node-version: 22
       - name: Validate laws
         run: node tools/nation.mjs validate
+      - name: Run validator regression tests
+        run: node --test
       - name: Regenerate index and graph
         run: |
           node tools/nation.mjs index

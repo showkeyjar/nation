@@ -133,9 +133,10 @@ Every law file carries one fenced block with the info string `law-meta` containi
 5. an evidence pointer does not use one of the six prefixes in §4;
 6. `status` is `ratified` and any evidence pointer or parameter evidence is `pending:`;
 7. a relative markdown link in the repository points at a file that does not exist;
-8. the law register in [Constitution.md](./Constitution.md) and the files in `laws/` disagree.
+8. the law register in [Constitution.md](./Constitution.md) and the files in `laws/` disagree;
+9. a parameter is declared in the metadata but missing from the law's `## Parameters` table, or vice versa.
 
-It warns, without failing, on: missing `open_questions`, empty `dissent`, an article title that differs from its heading title, and a law whose `version` and last `history` entry disagree.
+It warns, without failing, on: missing `open_questions`, empty `dissent`, an article title that differs from its heading title, a law whose `version` and last `history` entry disagree, a parameter present in the metadata with no `## Parameters` section to house it, and — **W008** — a `data:`, `study:` or `model:` pointer that carries no DOI, URL, code anchor or year, and therefore cannot be followed by a reader. W008 is the second layer of evidence debt after `pending:`; pointers it flags should be upgraded to citable form or downgraded to `pending:` rather than left unfollowable.
 
 ---
 
@@ -158,6 +159,8 @@ draft ──► proposed ──► trial ──► ratified ──► amended �
 | `repealed` | A ratified law is withdrawn, with the reason published | — |
 
 **Trials are the default.** A rule that cannot be trialled in a defined population should say so explicitly and explain why.
+
+**Version semantics.** Versions are `MAJOR.MINOR.PATCH`. MINOR: new articles or rule changes (a `draft` law may move MINOR freely; a `ratified` law that moves MINOR becomes `amended`). PATCH: evidence upgrades (replacing `pending:` or unfollowable pointers with citable sources), formatting, link repairs — anything that does not change what the rule says. Every version bump, PATCH included, gets a `history` entry with a one-line change note; the validator's W006 keeps `version` and the last history entry honest.
 
 ---
 

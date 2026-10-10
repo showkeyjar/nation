@@ -1,6 +1,6 @@
 # Development Law (技术发展与开源法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C9, C14, C16–C26 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.1, §2.2 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §4
 > Refines the project's 2022 seed rules (original rules 1–5 are preserved as DEV1–DEV5) into operational law.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.development",
   "title": "Development Law (技术发展与开源法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["engine", "commons"],
@@ -22,7 +22,7 @@
     { "id": "DEV6", "title": "The legitimate-use test", "evidence": ["pending:first two years of prohibited-use enforcement decisions, published"], "falsifier": "If the prohibited-use list expands beyond its published categories, or is used to suppress disfavoured research, the test has become censorship and must be struck by the constitutional bench." },
     { "id": "DEV7", "title": "Public money means public technology", "evidence": ["study:open-access mandates and follow-on innovation"], "falsifier": "If day-one release reduces commercialisation in a domain without raising diffusion, that domain may adopt a short window instead." },
     { "id": "DEV8", "title": "The technology registry and prior-art duty", "evidence": ["audit:registry coverage, search latency, duplicate-research ratio"], "falsifier": "If registry coverage does not reduce the duplicate-research ratio within two review periods, the registry is not earning its cost." },
-    { "id": "DEV9", "title": "Open standard-setting", "evidence": ["study:standard-essential patent hold-up and FRAND outcomes"], "falsifier": "If open participation standards produce slower or worse standards than closed bodies, participation rules must be loosened while keeping disclosure." },
+    { "id": "DEV9", "title": "Open standard-setting", "evidence": ["study:Lemley & Shapiro 2007 (Texas Law Review 85, Patent Holdup and Royalty Stacking)"], "falsifier": "If open participation standards produce slower or worse standards than closed bodies, participation rules must be loosened while keeping disclosure." },
     { "id": "DEV10", "title": "Interoperability as a market-access condition", "evidence": ["data:portability mandates and switching costs"], "falsifier": "If portability mandates raise prices or degrade service more than they lower switching costs, they must be narrowed." },
     { "id": "DEV11", "title": "The safety gate", "evidence": ["study:pre-market assessment regimes and incident rates"], "falsifier": "If the gate's high-risk classes show no lower incident rates than unclassed deployments, the classification must be re-derived." },
     { "id": "DEV12", "title": "Dual-use and security exceptions", "evidence": ["audit:exception list size, declassification on-time rate"], "falsifier": "If the exception list grows or items miss declassification dates, the exception regime is being used as concealment and must be cut back by the bench." },
@@ -56,7 +56,8 @@
     "What triggers a class re-audit before the statutory interval — a single severe incident, a pattern, or a petition?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Refined the 2022 seed rules 1-5 into DEV1-DEV5 and added registry, standards, interoperability, safety gate, dual-use exceptions and localization duty." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Refined the 2022 seed rules 1-5 into DEV1-DEV5 and added registry, standards, interoperability, safety gate, dual-use exceptions and localization duty." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -155,7 +156,7 @@
 
 **Rationale.** A standard is law written by its participants; participants must therefore include everyone bound by it.
 
-**Evidence.** `study:` standard-essential patent hold-up and FRAND outcomes.
+**Evidence.** `study:` Lemley & Shapiro 2007 (Texas Law Review 85, Patent Holdup and Royalty Stacking).
 
 **Falsifier.** If open participation standards produce slower or worse standards than closed bodies, participation rules must be loosened while keeping disclosure.
 
@@ -251,3 +252,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Refined the 2022 seed rules 1–5 into DEV1–DEV5 and added registry, standards, interoperability, safety gate, dual-use exceptions and localization duty. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

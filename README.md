@@ -57,6 +57,13 @@ The current evidence debt (every pending pointer, per article) is listed in [LAW
 | Health Care Law (医疗法) | floor | [laws/Health_Care_Law.md](./laws/Health_Care_Law.md) |
 | Marriage Law (婚姻法) | governance, floor | [laws/Marriage_Law.md](./laws/Marriage_Law.md) |
 | Defense Law (国防法) | governance, direction | [laws/Defense_Law.md](./laws/Defense_Law.md) |
+| Tax Law (税法) | floor, engine | [laws/Tax_Law.md](./laws/Tax_Law.md) |
+| Currency Law (货币法) | engine, governance | [laws/Currency_Law.md](./laws/Currency_Law.md) |
+| Elections and Referendums Law (选举与公投法) | governance | [laws/Elections_Law.md](./laws/Elections_Law.md) |
+| Criminal Law (刑法) | governance, floor | [laws/Criminal_Law.md](./laws/Criminal_Law.md) |
+| Immigration and Residence Law (移民与居留法) | governance, floor | [laws/Immigration_Law.md](./laws/Immigration_Law.md) |
+| Environment and Resources Law (环境与资源法) | direction, commons | [laws/Environment_Law.md](./laws/Environment_Law.md) |
+| Transition Law (过渡法) | governance | [laws/Transition_Law.md](./laws/Transition_Law.md) |
 
 The 2022 seed rules survive inside [laws/Development_Law.md](./laws/Development_Law.md) as articles DEV1–DEV5.
 
@@ -64,8 +71,8 @@ The 2022 seed rules survive inside [laws/Development_Law.md](./laws/Development_
 
 Honestly, in stages, and only through the front door:
 
-- **Stage 0 (now)** — an open blueprint. Fork it, attack it, replace its guesses with measurements.
-- **Stage 1** — a pilot: 10,000–1,000,000 people (a community, district or chartered zone) running the framework under a host state's law, with pre-registered hypotheses and published results, including failures. The load-bearing parameters to measure: exclusivity windows `W_d`, buyout share `α`, creator share `β`, floor indexation `κ`.
+- **Stage 0 (now)** — an open blueprint. Fork it, attack it (see [docs/RED_TEAM.md](./docs/RED_TEAM.md) for where it is weakest), replace its guesses with measurements.
+- **Stage 1** — a pilot: 10,000–1,000,000 people (a community, district or chartered zone) running the framework under a host state's law, with pre-registered hypotheses and published results, including failures — the charter template is [docs/PILOT_CHARTER.md](./docs/PILOT_CHARTER.md). The load-bearing parameters to measure: exclusivity windows `W_d`, buyout share `α`, creator share `β`, floor indexation `κ`.
 - **Stage 2** — regional adoption, on audited pilot results.
 - **Stage 3** — a nation, by referendum on results rather than promises.
 
@@ -73,7 +80,7 @@ There is no founding date, no leader and no territory claim here. There is a fal
 
 ## Contributing
 
-Attacks, evidence (replacing `pending:` pointers), missing laws, translations, and pilots are all wanted — in that order of value. See [CONTRIBUTING.md](./CONTRIBUTING.md). The short version: open a pull request that passes `npm run validate`, expect your rule to be attacked, and record the attack in `dissent` if you cannot answer it.
+Attacks, evidence (replacing `pending:` pointers), missing laws, translations, and pilots are all wanted — in that order of value. See [CONTRIBUTING.md](./CONTRIBUTING.md) and [docs/RED_TEAM.md](./docs/RED_TEAM.md). The short version: open a pull request that passes `npm run validate` (and `npm test`), expect your rule to be attacked, and record the attack in `dissent` if you cannot answer it. Translations are snapshots of the English canonical text, marked with the version they track — regenerate rather than drift.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Social Floor Law (社会兜底法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C27–C32 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.4, §5 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §10
 > The chassis: what nobody may fall below, how it is indexed, how it is funded, and how it is delivered without humiliation.
 
@@ -8,21 +8,21 @@
 {
   "id": "law.social-floor",
   "title": "Social Floor Law (社会兜底法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["floor"],
   "summary": "Defines the unconditional floor (nutrition and water, housing, health care, education, connectivity and computation, personal security, legal aid, and a cash layer), its universality and non-conditionality, the indexation formula with its band, the funding ranking (rents first, never the innovation being accelerated), delivery and dignity rules (no surveillance means-testing, statutory deadlines, one application, auto-enrolment), the right to useful work at a floor wage, the treatment of children and of changed family status, proportionate anti-fraud rules, and the automatic escalation if adequacy falls.",
   "articles": [
     { "id": "FLR1", "title": "The eight components", "evidence": ["data:deprivation indices and their health, crime and schooling correlates"], "falsifier": "If a component shows no measurable improvement in the outcome it exists for after two review periods, its delivery method must be redesigned or the component merged." },
-    { "id": "FLR2", "title": "Unconditional and universal", "evidence": ["study:unconditional vs. conditional transfer outcomes"], "falsifier": "If unconditionality measurably reduces participation beyond what health and entrepreneurship gains compensate, the cash layer's size must change (still unconditionally delivered)." },
+    { "id": "FLR2", "title": "Unconditional and universal", "evidence": ["study:Banerjee, Hanna, Kreindler & Olken 2017 (AER, Debunking the Stereotype of the Lazy Welfare Recipient): seven RCTs of cash transfers, no systematic labour-supply reduction"], "falsifier": "If unconditionality measurably reduces participation beyond what health and entrepreneurship gains compensate, the cash layer's size must change (still unconditionally delivered)." },
     { "id": "FLR3", "title": "Indexation", "evidence": ["model:tools/simulate.mjs indexation sweep"], "falsifier": "If indexation drives debt/output past the stability threshold, the formula must be smoothed or banded before any component is cut." },
     { "id": "FLR4", "title": "Funding ranking", "evidence": ["data:rent shares of GDP vs. floor cost in comparable economies"], "falsifier": "If the rent base cannot cover the indexed floor and the gap closes only with distortionary taxes, the ranking must be re-derived with evidence." },
     { "id": "FLR5", "title": "The cash layer", "evidence": ["data:cash transfer delivery cost and error rates by design"], "falsifier": "If the cash layer's marginal effect on wellbeing is below its cost at current size, it must be resized before other components are cut." },
     { "id": "FLR6", "title": "Housing", "evidence": ["data:vacancy rates, rent-to-income ratios, and eviction outcomes"], "falsifier": "If the vacancy levy and trust expansion do not reduce rent-to-income ratios within three review periods, housing supply rules must be rewritten." },
     { "id": "FLR7", "title": "Utilities: water, energy, connectivity, computation", "evidence": ["pending:first lifeline tariff and compute entitlement outcomes"], "falsifier": "If the compute/bandwidth entitlement goes unused by its intended recipients, it must be redesigned around shared facilities rather than individual entitlements." },
     { "id": "FLR8", "title": "Delivery and dignity", "evidence": ["data:take-up rates under simple vs. surveilled delivery"], "falsifier": "If surveillance-free delivery raises error and fraud beyond the recovery capacity of FLR12, targeted verification may be added for the non-cash layers only, never for the cash layer." },
-    { "id": "FLR9", "title": "Right to useful work", "evidence": ["study:employer-of-last-resort pilots"], "falsifier": "If the guarantee crowds out private employment or becomes low-wage make-work, it converts to training and placement entitlements." },
+    { "id": "FLR9", "title": "Right to useful work", "evidence": ["study:Imbert & Papp 2015 (AEJ: Applied, Labor Market Effects of Social Programs): public employment guarantee evidence from India"], "falsifier": "If the guarantee crowds out private employment or becomes low-wage make-work, it converts to training and placement entitlements." },
     { "id": "FLR10", "title": "Statutory deadlines and one application", "evidence": ["audit:decision latency, applications per household, appeal volumes"], "falsifier": "If deadlines are systematically missed without consequence, they must be enforced by automatic default approval plus audit." },
     { "id": "FLR11", "title": "No family-status trap", "evidence": ["pending:take-up differentials by household composition"], "falsifier": "If household aggregation demonstrably hides need (the working poor within a mixed household), assessment must move to the individual with a published correction." },
     { "id": "FLR12", "title": "Error, fraud and proportionality", "evidence": ["data:fraud rates in universal vs. means-tested systems"], "falsifier": "If recovery enforcement reduces take-up among eligible people more than it recovers, it must be scaled back." },
@@ -56,7 +56,8 @@
     "How is the floor portable across communities without triggering a race to the cheapest provider?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: eight components, unconditionality, indexation, funding ranking, cash layer, housing, utilities including connectivity and computation, dignity in delivery, useful work, deadlines, family-status protection, proportionate anti-fraud, adequacy escalation." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: eight components, unconditionality, indexation, funding ranking, cash layer, housing, utilities including connectivity and computation, dignity in delivery, useful work, deadlines, family-status protection, proportionate anti-fraud, adequacy escalation." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -81,7 +82,7 @@
 
 **Rationale.** Conditionality spends administrative money to remove money from exactly the people least able to fight the process, and it teaches the poor to lie to the state.
 
-**Evidence.** `study:` unconditional vs. conditional transfer outcomes.
+**Evidence.** `study:` Banerjee, Hanna, Kreindler & Olken 2017 (AER, Debunking the Stereotype of the Lazy Welfare Recipient): seven RCTs of cash transfers, no systematic labour-supply reduction.
 
 **Falsifier.** If unconditionality measurably reduces participation beyond what health and entrepreneurship gains compensate, the cash layer's size must change (still unconditionally delivered).
 
@@ -155,7 +156,7 @@
 
 **Rationale.** A floor protects existence; work gives structure, skill and belonging. Offering both removes the false choice between handout and workfare.
 
-**Evidence.** `study:` employer-of-last-resort pilots.
+**Evidence.** `study:` Imbert & Papp 2015 (AEJ: Applied, Labor Market Effects of Social Programs): public employment guarantee evidence from India.
 
 **Falsifier.** If the guarantee crowds out private employment or becomes low-wage make-work, it converts to training and placement entitlements.
 
@@ -238,3 +239,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: eight components, unconditionality, indexation, funding ranking, cash layer, housing, utilities including connectivity and computation, dignity in delivery, useful work, deadlines, family-status protection, proportionate anti-fraud, adequacy escalation. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

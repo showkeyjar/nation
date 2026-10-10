@@ -1,6 +1,6 @@
 # Civil Law (民法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C6–C8, C27, C32, C38 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §5 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §12
 > Persons, things, promises, harm — and liability when software agents are the ones acting.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.civil",
   "title": "Civil Law (民法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["governance", "floor"],
@@ -21,13 +21,13 @@
     { "id": "CIV5", "title": "The agent incident ledger", "evidence": ["audit:incident ledger completeness and log-production rate in disputes"], "falsifier": "If the log presumption does not increase log retention in disputes, it must convert into a licensing condition for deployment." },
     { "id": "CIV6", "title": "Privacy and data rights", "evidence": ["data:subject-access and deletion request volumes and outcomes"], "falsifier": "If these rights are exercised mainly by the already-advantaged, delivery must be automated (default-off data collection) rather than request-based." },
     { "id": "CIV7", "title": "Tiered dispute resolution", "evidence": ["audit:decision latency and cost per tier, appeal rates"], "falsifier": "If any tier's latency or cost exceeds its published budget for two consecutive years, the tier must be restructured or merged." },
-    { "id": "CIV8", "title": "Sortition jurors", "evidence": ["study:lay participation in civil disputes"], "falsifier": "If lay panels increase reversal rates without improving perceived legitimacy, the value threshold for juries must rise." },
+    { "id": "CIV8", "title": "Sortition jurors", "evidence": ["study:Kalven & Zeisel 1966 (The American Jury): judge–jury agreement and deliberation evidence"], "falsifier": "If lay panels increase reversal rates without improving perceived legitimacy, the value threshold for juries must rise." },
     { "id": "CIV9", "title": "Remedies", "evidence": ["pending:first structural remedies issued against dominant providers"], "falsifier": "If structural remedies are systematically ineffective or systematically excessive, the remedy menu must be re-derived." },
     { "id": "CIV10", "title": "Enforcement without humiliation", "evidence": ["data:enforcement regimes and re-insolvency rates"], "falsifier": "If wage-floor protection in enforcement raises credit costs beyond the harm it prevents, the protected share must be re-set." }
   ],
   "parameters": [
     { "name": "agent_bond_threshold", "value": 500000, "unit": "accounting units of expected annual exposure", "evidence": "pending:first agent-deployment bond calibrations" },
-    { "name": "jury_value_threshold", "value": 100000, "unit": "accounting units in dispute", "evidence": "study:lay participation in civil disputes" },
+    { "name": "jury_value_threshold", "value": 100000, "unit": "accounting units in dispute", "evidence": "study:Kalven & Zeisel 1966 (The American Jury): judge–jury agreement and deliberation evidence" },
     { "name": "mediation_days_max", "value": 60, "unit": "days in community mediation before escalation", "evidence": "pending:first mediation cohort" },
     { "name": "tribunal_decision_days_max", "value": 120, "unit": "days", "evidence": "pending:first tribunal cohort" },
     { "name": "enforcement_wage_protect_share", "value": 0.7, "unit": "share of income shielded from execution", "evidence": "data:enforcement regimes and re-insolvency rates" }
@@ -50,7 +50,8 @@
     "Can community mediation handle disputes involving non-resident parties without becoming unenforceable?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft (replaces the empty 2022 stub): personhood, contract, property with commons carve-out, AI agent liability, incident ledger, data rights, tiered dispute resolution, remedies, humane enforcement." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft (replaces the empty 2022 stub): personhood, contract, property with commons carve-out, AI agent liability, incident ledger, data rights, tiered dispute resolution, remedies, humane enforcement." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -143,7 +144,7 @@
 
 **Rationale.** The community's sense of fairness is a legal input this framework deliberately uses (Constitution C34); law that never meets it drifts.
 
-**Evidence.** `study:` lay participation in civil disputes.
+**Evidence.** `study:` Kalven & Zeisel 1966 (The American Jury): judge–jury agreement and deliberation evidence.
 
 **Falsifier.** If lay panels increase reversal rates without improving perceived legitimacy, the value threshold for juries must rise.
 
@@ -174,7 +175,7 @@
 | Name | Value | Unit | Evidence |
 | --- | --- | --- | --- |
 | `agent_bond_threshold` | 500,000 | accounting units of expected annual exposure | `pending:` first agent-deployment bond calibrations |
-| `jury_value_threshold` | 100,000 | accounting units in dispute | `study:` lay participation in civil disputes |
+| `jury_value_threshold` | 100,000 | accounting units in dispute | `study:` Kalven & Zeisel 1966 (The American Jury): judge–jury agreement and deliberation evidence |
 | `mediation_days_max` | 60 | days in community mediation before escalation | `pending:` first mediation cohort |
 | `tribunal_decision_days_max` | 120 | days | `pending:` first tribunal cohort |
 | `enforcement_wage_protect_share` | 0.7 | share of income shielded from execution | `data:` enforcement regimes and re-insolvency rates |
@@ -203,3 +204,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft (replaces the empty 2022 stub): personhood, contract, property with commons carve-out, AI agent liability, incident ledger, data rights, tiered dispute resolution, remedies, humane enforcement. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |

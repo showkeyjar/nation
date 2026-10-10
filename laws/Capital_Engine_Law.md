@@ -1,6 +1,6 @@
 # Capital Engine Law (资本动力法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C15–C21 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2, §2.1, §2.2 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §8
 > The engine: property, profit and competition as accelerators, with bounded exclusivity and a priced buyout as the price of the acceleration.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.capital-engine",
   "title": "Capital Engine Law (资本动力法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["engine"],
@@ -20,12 +20,12 @@
     { "id": "CAP4", "title": "No re-monopolisation through interfaces", "evidence": ["data:interoperability loss events and their price effects"], "falsifier": "If mandatory interoperability in a fast-moving domain measurably slows protocol evolution more than it lowers prices, CAP4 must be relaxed there." },
     { "id": "CAP5", "title": "The monopoly test", "evidence": ["data:markup and entry-barrier calibration against known monopoly cases"], "falsifier": "If the test flags competitive markets or misses durable monopolies, thresholds must be recalibrated or replaced by a structural-entry test." },
     { "id": "CAP6", "title": "Buyout procedure and price", "evidence": ["study:nationalisation and compulsory licensing compensation outcomes"], "falsifier": "If buyouts at the capped formula systematically fail to attract sellers, or cost more than the deadweight loss they remove, alpha or the cap is mis-set." },
-    { "id": "CAP7", "title": "Creator share", "evidence": ["pending:creator-share response measurement in pilot (the illustrative model does not vary the creator share)"], "falsifier": "If creator shares above the beta cap do not increase subsequent invention rates, beta should fall to the level keeping inventors at parity with a salaried career." },
+    { "id": "CAP7", "title": "Creator share", "evidence": ["pending:creator-share effort response measurement in pilot — the model's creator-share sweep puts the in-cap optimum at the cap, but only under an ASSUMED effort response that has never been measured", "model:tools/simulate.mjs#sweep=beta"], "falsifier": "If creator shares above the beta cap do not increase subsequent invention rates, beta should fall to the level keeping inventors at parity with a salaried career." },
     { "id": "CAP8", "title": "Pre-commitment discipline", "evidence": ["study:advance market commitment overpayment cases"], "falsifier": "If commitments with clawbacks still systematically overpay versus prizes, the instrument must be capped or replaced." },
     { "id": "CAP9", "title": "The state as investor", "evidence": ["data:sovereign wealth fund governance and conflict incidents"], "falsifier": "If sovereign holdings do not distort rule-making less than controlling stakes would, the passive-only rule has failed and full divestment from affected sectors is required." },
     { "id": "CAP10", "title": "Competition beyond price", "evidence": ["study:killer acquisitions and structural remedies"], "falsifier": "If structural separation and interoperability remedies raise costs more than they lower prices, enforcement must return to price remedies only." },
     { "id": "CAP11", "title": "Mobility, non-retroactivity, erosion control", "evidence": ["data:capital flight response to expropriation vs. rule-based buyouts"], "falsifier": "If rule-based buyouts still trigger net outflows exceeding the value released, compensation or notice terms are insufficient." },
-    { "id": "CAP12", "title": "Honest failure and the fresh start", "evidence": ["data:entrepreneurship rates under bankruptcy discharge regimes"], "falsifier": "If generous discharge raises reckless failure without raising retry rates, the fresh start must be conditioned on honest reporting." },
+    { "id": "CAP12", "title": "Honest failure and the fresh start", "evidence": ["study:Fan & White 1994 personal bankruptcy and entrepreneurship; Armour & Cumbride 2008 (Bankruptcy Law and Entrepreneurship)"], "falsifier": "If generous discharge raises reckless failure without raising retry rates, the fresh start must be conditioned on honest reporting." },
     { "id": "CAP13", "title": "Open procurement", "evidence": ["audit:procurement register — unit costs, tender counts, sole-source share"], "falsifier": "If open tendering raises cost or delay without reducing corruption, thresholds and set-asides must be re-derived." },
     { "id": "CAP14", "title": "Cooperative and community capital", "evidence": ["pending:pilot data on cooperative share of mission contracts and their delivery"], "falsifier": "If cooperatives systematically underdeliver on mission contracts, equal standing must not extend to preferential access." },
     { "id": "CAP15", "title": "Rents before profits", "evidence": ["data:rent shares of GDP (land, resources, spectrum, carbon, data) vs. floor cost"], "falsifier": "If shifting the floor's funding from profits to rents reduces investment without improving floor security, the ranking must be re-derived with evidence." }
@@ -64,7 +64,8 @@
     "Do capital-gains-as-income and rent-first taxation interact badly with the sovereign fund's returns?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: windows, monopoly test, buyout formula and cap, creator share, pre-commitment discipline, state-as-investor rules, competition beyond price, mobility, fresh start, open procurement, rents-before-profits." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: windows, monopoly test, buyout formula and cap, creator share, pre-commitment discipline, state-as-investor rules, competition beyond price, mobility, fresh start, open procurement, rents-before-profits." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers; CAP7 now cites the simulation's creator-share sweep with its pending anchor kept (W008 reduction)." }
   ]
 }
 ```
@@ -143,7 +144,7 @@
 
 **Rationale.** Inventors must not be punished for having served the public; but the share is a floor under invention, not a perpetual levy on the commons.
 
-**Evidence.** `pending:` creator-share response measurement in pilot (the illustrative model does not vary the creator share).
+**Evidence.** `pending:` creator-share effort response measurement in pilot — the model's [creator-share sweep](../docs/SIMULATION.md) puts the in-cap optimum at the cap, but only under an ASSUMED effort response (η_β) that has never been measured; the sweep's stress case (β = 0.20) beats every in-cap setting, so the cap is defended by the falsifier, not by the model. `model:` tools/simulate.mjs#sweep=beta.
 
 **Falsifier.** If creator shares above the β cap do not increase subsequent invention rates, β should fall to the level keeping inventors at parity with a salaried career.
 
@@ -197,7 +198,7 @@
 
 **Rationale.** A society that punishes honest failure gets fewer attempts and more concealment; with a skewed distribution of outcomes, attempts are most of the result.
 
-**Evidence.** `data:` entrepreneurship rates under bankruptcy discharge regimes.
+**Evidence.** `study:` Fan & White 1994 personal bankruptcy and entrepreneurship; Armour & Cumbride 2008 (Bankruptcy Law and Entrepreneurship).
 
 **Falsifier.** If generous discharge raises reckless failure without raising retry rates, the fresh start must be conditioned on honest reporting.
 
@@ -278,3 +279,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: windows, monopoly test, buyout formula and cap, creator share, pre-commitment discipline, state-as-investor rules, competition beyond price, mobility, fresh start, open procurement, rents-before-profits. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers; CAP7 now cites the simulation's creator-share sweep with its pending anchor kept (W008 reduction). |

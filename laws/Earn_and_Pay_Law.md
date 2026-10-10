@@ -1,6 +1,6 @@
 # Earn and Pay Law (劳动与报酬法)
 
-> Version 0.1.0 · 2026-10-10 · Status: draft
+> Version 0.1.1 · 2026-10-10 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C15, C27–C31 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.4 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §10
 > The wage-and-voice layer between the engine and the floor.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.earn-and-pay",
   "title": "Earn and Pay Law (劳动与报酬法)",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "draft",
   "adopted": null,
   "pillars": ["engine", "floor"],
@@ -16,8 +16,8 @@
   "articles": [
     { "id": "PAY1", "title": "The wage floor", "evidence": ["data:minimum wage employment effects literature"], "falsifier": "If the wage floor at 1.15x the social floor reduces employment among low-hours workers more than it raises their total earnings, the multiple must be re-derived with pilot data." },
     { "id": "PAY2", "title": "Pay transparency", "evidence": ["study:pay transparency effects on gaps and bargaining"], "falsifier": "If transparency narrows gaps only by levelling pay down, publication must be paired with the PAY12 review trigger." },
-    { "id": "PAY3", "title": "Default profit and equity sharing", "evidence": ["study:profit sharing and productivity; employee ownership outcomes"], "falsifier": "If mandatory sharing reduces firm formation or growth above the costs it imposes, the threshold or the share must be raised, not the principle abandoned." },
-    { "id": "PAY4", "title": "Working time", "evidence": ["study:working-hours and productivity; four-day week trials"], "falsifier": "If reduced standard hours reduce output per firm more than health and participation gains, the standard must be re-set from the trial data." },
+    { "id": "PAY3", "title": "Default profit and equity sharing", "evidence": ["study:Kruse 1993 (Profit Sharing: Does It Make a Difference?); Doucouliagos 1995 meta-analysis of profit sharing and productivity"], "falsifier": "If mandatory sharing reduces firm formation or growth above the costs it imposes, the threshold or the share must be raised, not the principle abandoned." },
+    { "id": "PAY4", "title": "Working time", "evidence": ["study:UK four-day week pilot 2022–2023 (61–64 firms, Burchell et al. 2023 report): revenue broadly held, turnover and sickness absence fell"], "falsifier": "If reduced standard hours reduce output per firm more than health and participation gains, the standard must be re-set from the trial data." },
     { "id": "PAY5", "title": "The bogus self-employment test", "evidence": ["data:platform work hour and wage audits"], "falsifier": "If the test reclassifies genuinely independent workers, it must be narrowed to control-and-dependence criteria." },
     { "id": "PAY6", "title": "Worker voice", "evidence": ["study:co-determination outcomes"], "falsifier": "If board representation produces no measurable change in closure, safety or pay decisions, it is ceremonial and must be replaced by bargaining rights only." },
     { "id": "PAY7", "title": "Safety and the right to refuse", "evidence": ["data:refusal-right regimes and incident rates"], "falsifier": "If the right to refuse is followed by retaliatory dismissal at the same rate as before, enforcement must move to automatic reinstatement." },
@@ -25,7 +25,7 @@
     { "id": "PAY9", "title": "Transition income and retraining", "evidence": ["pending:mission closure cohorts and their two-year outcomes"], "falsifier": "If transition income does not shorten return-to-work time versus the floor alone, it should merge into the floor." },
     { "id": "PAY10", "title": "Care work", "evidence": ["study:care leave and pension credit effects on participation"], "falsifier": "If the care credit reduces carers' lifetime earnings without raising participation, it must be restructured as wage insurance." },
     { "id": "PAY11", "title": "The state as model employer", "evidence": ["audit:public pay ratios published annually"], "falsifier": "If the capped ratio degrades public-sector capability measurably, the cap must rise with a published justification." },
-    { "id": "PAY12", "title": "The labour-share trigger", "evidence": ["data:labour share of income series"], "falsifier": "If the trigger fires repeatedly with no change in outcomes, it must escalate to a mandatory capital-share levy proposal rather than a review." }
+    { "id": "PAY12", "title": "The labour-share trigger", "evidence": ["study:Elsby, Hobijn & Sahin 2013 (Brookings Papers on Economic Activity, The Decline of the U.S. Labor Share)"], "falsifier": "If the trigger fires repeatedly with no change in outcomes, it must escalate to a mandatory capital-share levy proposal rather than a review." }
   ],
   "parameters": [
     { "name": "wage_floor_multiple", "value": 1.15, "unit": "multiple of the social floor", "evidence": "pending:pilot interaction with Social Floor FLR9" },
@@ -35,7 +35,7 @@
     { "name": "standard_week_hours", "value": 40, "unit": "hours", "evidence": "study:working-hours and productivity" },
     { "name": "overtime_premium", "value": 1.5, "unit": "multiplier", "evidence": "data:overtime premium regimes" },
     { "name": "public_pay_ratio_cap", "value": 12, "unit": "highest-to-lowest full-time pay", "evidence": "pending:first public pay audit" },
-    { "name": "labour_share_trigger", "value": 0.55, "unit": "labour share of net income, 3-year average", "evidence": "data:labour share of income series" }
+    { "name": "labour_share_trigger", "value": 0.55, "unit": "labour share of net income, 3-year average", "evidence": "study:Elsby, Hobijn & Sahin 2013 (Brookings Papers on Economic Activity, The Decline of the U.S. Labor Share)" }
   ],
   "metrics": [
     "labour share of net income, 3-year moving average",
@@ -56,7 +56,8 @@
     "Is the labour-share trigger meaningful in an economy where mission and commons employment blurs the labour/capital boundary?"
   ],
   "history": [
-    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: wage floor, transparency, profit and equity sharing, working time, self-employment test, voice, safety, right of first offer, transition income, care work, model employer, labour-share trigger." }
+    { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: wage floor, transparency, profit and equity sharing, working time, self-employment test, voice, safety, right of first offer, transition income, care work, model employer, labour-share trigger." },
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
   ]
 }
 ```
@@ -91,7 +92,7 @@
 
 **Rationale.** If capital is the engine of this framework, the people who run the engine should hold a share of it — not as charity, but because broad ownership is the domestic version of the commons conversion.
 
-**Evidence.** `study:` profit sharing and productivity; employee ownership outcomes.
+**Evidence.** `study:` Kruse 1993 (Profit Sharing: Does It Make a Difference?); Doucouliagos 1995 meta-analysis of profit sharing and productivity.
 
 **Falsifier.** If mandatory sharing reduces firm formation or growth above the costs it imposes, the threshold or the share must be raised, not the principle abandoned.
 
@@ -101,7 +102,7 @@
 
 **Rationale.** The floor exists so people can take risks; working time rules exist so they can have a life while doing it.
 
-**Evidence.** `study:` working-hours and productivity; four-day week trials.
+**Evidence.** `study:` UK four-day week pilot 2022–2023 (61–64 firms, Burchell et al. 2023 report): revenue broadly held, turnover and sickness absence fell.
 
 **Falsifier.** If reduced standard hours reduce output per firm more than health and participation gains, the standard must be re-set from the trial data.
 
@@ -185,7 +186,7 @@
 
 **Rationale.** In an economy designed to reward capital for accelerating discovery, the distribution of the reward must be watched, not assumed.
 
-**Evidence.** `data:` labour share of income series.
+**Evidence.** `study:` Elsby, Hobijn & Sahin 2013 (Brookings Papers on Economic Activity, The Decline of the U.S. Labor Share).
 
 **Falsifier.** If the trigger fires repeatedly with no change in outcomes, it must escalate to a mandatory capital-share levy proposal rather than a review.
 
@@ -202,7 +203,7 @@
 | `standard_week_hours` | 40 | hours | `study:` working-hours and productivity |
 | `overtime_premium` | 1.5 | multiplier | `data:` overtime premium regimes |
 | `public_pay_ratio_cap` | 12 | highest-to-lowest full-time pay | `pending:` first public pay audit |
-| `labour_share_trigger` | 0.55 | labour share of net income, 3-year average | `data:` labour share of income series |
+| `labour_share_trigger` | 0.55 | labour share of net income, 3-year average | `study:` Elsby, Hobijn & Sahin 2013 (Brookings Papers on Economic Activity, The Decline of the U.S. Labor Share) |
 
 ## Metrics
 
@@ -229,3 +230,4 @@
 | Version | Date | Change |
 | --- | --- | --- |
 | 0.1.0 | 2026-10-10 | Initial draft: wage floor, transparency, profit and equity sharing, working time, self-employment test, voice, safety, right of first offer, transition income, care work, model employer, labour-share trigger. |
+| 0.1.1 | 2026-10-10 | Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction). |
