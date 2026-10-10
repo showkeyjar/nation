@@ -1,0 +1,11 @@
+# Normalise text files to LF in the repository and on checkout, so that
+# regeneration on any platform produces byte-identical artifacts (required by
+# the CI diff check on LAW_INDEX.md and docs/law-graph.md).
+* text=auto eol=lf
+
+# Binary files — never normalise.
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.csv -text

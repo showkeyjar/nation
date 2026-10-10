@@ -1,0 +1,17 @@
+{
+  "name": "nation",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Open Nation blueprint: constitution, laws and the tooling that enforces the evidence rule.",
+  "type": "module",
+  "license": "GPL-3.0",
+  "scripts": {
+    "validate": "node tools/nation.mjs validate",
+    "index": "node tools/nation.mjs index",
+    "graph": "node tools/nation.mjs graph",
+    "simulate": "node tools/simulate.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
