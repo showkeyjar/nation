@@ -17,7 +17,7 @@ And the fourth one that makes it a system rather than a grievance: capital, plan
 
 ## The framework (v0.2)
 
-**宏观引导 + 资本动力 + 全民共享 + 社会兜底** — macro steering, capital engine, commons sharing, social floor:
+**Macro steering + capital engine + commons sharing + social floor** —
 
 - The **state sets direction**: a small number of published long-horizon missions, framed as problems with thresholds, never as technologies.
 - **Capital races** along that direction: property and profit protected, exclusivity time-limited and priced, state demand pre-committed so a ten-year bet becomes a bankable contract.

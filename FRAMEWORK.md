@@ -19,7 +19,7 @@ This document specifies the machine, its parameters, its failure modes, and how 
 
 The design is easier to hold in mind as a vehicle. Each layer is a *power* with a *limit* — the limit is what keeps the layer from eating the others.
 
-| Layer | 中文 | Powers | Limits |
+| Layer | Chinese name | Powers | Limits |
 | --- | --- | --- | --- |
 | **Helm** — steering | 宏观引导 | Publish long-horizon missions; fund upstream research; buy, prize, standardise | May not command research agendas, conscript labour, or name the winning technology (C10, C12) |
 | **Engine** — capital | 资本动力 | Property, contract, profit, exclusive windows, free entry/exit | Exclusivity is time-limited and priced, never perpetual (C16); monopoly triggers buyout (C18) |
@@ -236,7 +236,7 @@ Deliberately missing from the roadmap: a founding date, a leader, a flag, a terr
 ## 9. Objection register
 
 **"This is just state capitalism with welfare."**
-State capitalism selects firms by political connection and protects national champions. This framework publishes the selection rule as a problem statement, caps missions, requires kill criteria, and *forces divestment of monopoly* rather than protecting it. The conversion valve is the part state capitalism never has.
+State capitalism selects firms by political connection and protects national champions. This framework publishes the selection rule as a problem statement, caps missions, requires kill criteria, and *forces divestment of monopoly* rather than protecting it. The conversion valve is the part state capitalism never has. Where a single firm wins the whole market, the framework does not rely on the per-capability test alone: Constitution C49 and CAP16–CAP17 (Capital Engine Law) add a firm-level disposition menu — buyout-and-release, structural separation of the firm's bottleneck units, or a procurement-share cap — chosen by pre-registered criteria, never by discretion, and never to favour a domestic "national champion." An anti-reconcentration cooling period stops the same winner from simply buying the released capability back.
 
 **"Capital will never accept a 3-year window."**
 It already does in software, fashion, and much of consumer hardware, where imitation lag is short and speed wins. It does not in pharmaceuticals, which is why that tier is 7 years plus trials. The windows are parameters to be measured, not an ideology — and the pre-commitment clause (§2.3) is what makes a short window bankable.

@@ -1,6 +1,6 @@
 # Capital Engine Law (资本动力法)
 
-> Version 0.1.1 · 2026-10-10 · Status: draft
+> Version 0.1.2 · 2026-10-11 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C15–C21 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2, §2.1, §2.2 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §8
 > The engine: property, profit and competition as accelerators, with bounded exclusivity and a priced buyout as the price of the acceleration.
 
@@ -8,11 +8,11 @@
 {
   "id": "law.capital-engine",
   "title": "Capital Engine Law (资本动力法)",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "status": "draft",
   "adopted": null,
   "pillars": ["engine"],
-  "summary": "Defines what capital may rely on (property, contract, profit, free entry and exit, a fresh start after honest failure) and what it may not (perpetual or evergreened exclusivity, re-monopolisation through interfaces, unexamined procurement, capture of the rules that govern it). Sets the exclusivity-window tiers per domain, the monopoly test, the buyout formula P = C_realized + alpha * V_expected with its cap and appeal route, and the creator share. Tax design ranks rents before profits so the floor is never funded by taxing the discovery it is trying to accelerate.",
+  "summary": "Defines what capital may rely on (property, contract, profit, free entry and exit, a fresh start after honest failure) and what it may not (perpetual or evergreened exclusivity, re-monopolisation through interfaces, unexamined procurement, capture of the rules that govern it). Sets the exclusivity-window tiers per domain, the monopoly test, the buyout formula P = C_realized + alpha * V_expected with its cap and appeal route, and the creator share. Tax design ranks rents before profits so the floor is never funded by taxing the discovery it is trying to accelerate. Adds a firm-level dominance disposition (buyout, structural separation, or procurement cap) and an anti-reconcentration rule so that a single company winning the market is corrected, not banked.",
   "articles": [
     { "id": "CAP1", "title": "What capital may rely on", "evidence": ["data:private R&D intensity vs. strength of property and contract enforcement across jurisdictions"], "falsifier": "If weakening property or contract enforcement in a domain raises its innovation rate, CAP1 fails for that domain and it should move to the commons layer directly." },
     { "id": "CAP2", "title": "Exclusivity windows are law", "evidence": ["model:tools/simulate.mjs#scenario=sweep over window length"], "falsifier": "If a domain's window change produces no measurable change in private investment or diffusion speed, the window parameter is inert there and should be removed from that domain's regulation." },
@@ -28,7 +28,9 @@
     { "id": "CAP12", "title": "Honest failure and the fresh start", "evidence": ["study:Fan & White 1994 personal bankruptcy and entrepreneurship; Armour & Cumbride 2008 (Bankruptcy Law and Entrepreneurship)"], "falsifier": "If generous discharge raises reckless failure without raising retry rates, the fresh start must be conditioned on honest reporting." },
     { "id": "CAP13", "title": "Open procurement", "evidence": ["audit:procurement register — unit costs, tender counts, sole-source share"], "falsifier": "If open tendering raises cost or delay without reducing corruption, thresholds and set-asides must be re-derived." },
     { "id": "CAP14", "title": "Cooperative and community capital", "evidence": ["pending:pilot data on cooperative share of mission contracts and their delivery"], "falsifier": "If cooperatives systematically underdeliver on mission contracts, equal standing must not extend to preferential access." },
-    { "id": "CAP15", "title": "Rents before profits", "evidence": ["data:rent shares of GDP (land, resources, spectrum, carbon, data) vs. floor cost"], "falsifier": "If shifting the floor's funding from profits to rents reduces investment without improving floor security, the ranking must be re-derived with evidence." }
+    { "id": "CAP15", "title": "Rents before profits", "evidence": ["data:rent shares of GDP (land, resources, spectrum, carbon, data) vs. floor cost"], "falsifier": "If shifting the floor's funding from profits to rents reduces investment without improving floor security, the ranking must be re-derived with evidence." },
+    { "id": "CAP16", "title": "Dominance disposition", "evidence": ["pending:pilot calibration of firm-level dominance thresholds and disposition outcomes", "study:killer-acquisition and structural-remedy literature on competition outcomes"], "falsifier": "If the procurement-share cap measurably reduces the dominant firm's R&D without improving contestability, the cap must be raised or removed." },
+    { "id": "CAP17", "title": "Anti-reconcentration", "evidence": ["pending:pilot market monitoring of recidivism after buyout or divestiture", "study:recidivism and re-entry patterns after structural remedies"], "falsifier": "If the cooling period deters legitimate acquisition of maintainers and slows commons maintenance, shorten it to bottleneck units only." }
   ],
   "parameters": [
     { "name": "W_data", "value": 2, "unit": "years", "evidence": "pending:domain-pilot data products" },
@@ -42,7 +44,13 @@
     { "name": "monopoly_share_threshold", "value": 0.5, "unit": "share of defined market", "evidence": "data:markup calibration against known monopoly cases" },
     { "name": "monopoly_markup_threshold", "value": 1.5, "unit": "ratio to competitive benchmark", "evidence": "data:markup calibration against known monopoly cases" },
     { "name": "monopoly_persistence_years", "value": 3, "unit": "consecutive years", "evidence": "pending:pilot market monitoring" },
-    { "name": "sole_source_approval_threshold", "value": 1000000, "unit": "accounting units", "evidence": "pending:procurement register analysis" }
+    { "name": "sole_source_approval_threshold", "value": 1000000, "unit": "accounting units", "evidence": "pending:procurement register analysis" },
+    { "name": "firm_dominance_share_threshold", "value": 0.15, "unit": "share of private-sector output", "evidence": "pending:firm-level concentration pilot" },
+    { "name": "procurement_dominance_cap", "value": 0.25, "unit": "share of mission procurement and public contracts", "evidence": "pending:pilot calibration" },
+    { "name": "reconcentration_years", "value": 5, "unit": "years after buyout or divestiture", "evidence": "pending:pilot market monitoring" },
+    { "name": "n_bottleneck", "value": 3, "unit": "distinct bottleneck capabilities", "evidence": "pending:pilot market monitoring" },
+    { "name": "separation_min_providers", "value": 2, "unit": "independent providers of a released capability after separation", "evidence": "pending:pilot market monitoring" },
+    { "name": "dominance_scan_quarters", "value": 1, "unit": "quarters between mandatory dominance scans", "evidence": "pending:pilot market monitoring" }
   ],
   "metrics": [
     "private research effort per domain, before and after window changes",
@@ -51,7 +59,9 @@
     "buyout count, price vs. formula, appeal rate, appeal outcomes",
     "procurement: tender count per contract, sole-source share, unit-cost trend",
     "new-firm entry rate and retry rate after insolvency",
-    "cooperative and community share of mission contracts"
+    "cooperative and community share of mission contracts",
+    "dominant-firm share of mission procurement and public contracts",
+    "recidivism: same holder re-reaching dominance within reconcentration_years"
   ],
   "sunset": { "review_every_years": 4, "expires": null },
   "dissent": [
@@ -65,7 +75,9 @@
   ],
   "history": [
     { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: windows, monopoly test, buyout formula and cap, creator share, pre-commitment discipline, state-as-investor rules, competition beyond price, mobility, fresh start, open procurement, rents-before-profits." },
-    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers; CAP7 now cites the simulation's creator-share sweep with its pending anchor kept (W008 reduction)." }
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers; CAP7 now cites the simulation's creator-share sweep with its pending anchor kept (W008 reduction)." },
+    { "version": "0.1.2", "date": "2026-10-11", "change": "Added CAP16 (dominance disposition menu) and CAP17 (anti-reconcentration) to handle a single firm winning the market; added parameters firm_dominance_share_threshold, procurement_dominance_cap, reconcentration_years, n_bottleneck; added two metrics." },
+    { "version": "0.1.3", "date": "2026-10-11", "change": "Made CAP16/CAP17 operational: added parameters separation_min_providers (post-separation competition floor) and dominance_scan_quarters (registry scan cadence); operational procedures now reference these parameters instead of a bare 'quarterly'." }
   ]
 }
 ```
@@ -232,6 +244,55 @@
 
 **Falsifier.** If shifting the floor's funding from profits to rents reduces investment without improving floor security, the ranking must be re-derived with evidence.
 
+### CAP16 — Dominance disposition
+
+**Claim.** A firm that crosses the systemic dominance threshold (Constitution C49) is subject to a graduated disposition decided by published, pre-registered criteria: (1) buyout and commons release of the bottleneck capability at the capped formula (CAP6); (2) structural separation — divestiture of the firm's bottleneck units into independent entities, its competitive units remaining private; (3) a cap `procurement_dominance_cap` on its share of mission procurement and public contracts. The criteria weight bottleneck criticality, separation feasibility, and domestic/foreign symmetry. A single firm may not hold `n_bottleneck` or more distinct bottleneck capabilities above the monopoly test.
+
+**Rationale.** Per-capability buyout (CAP5, CAP6) answers "this one capability is monopolised." It does not answer "one company now owns the whole market." Without a firm-level disposition, the engine's winner-take-all dynamic can bank a permanent toll-keeper that no single-capability test catches.
+
+**Evidence.** `pending:` pilot calibration of firm-level dominance thresholds and disposition outcomes. `study:` killer-acquisition and structural-remedy literature on competition outcomes.
+
+**Falsifier.** If the procurement-share cap measurably reduces the dominant firm's R&D without improving contestability, the cap must be raised or removed.
+
+#### Operational procedure
+
+The market registry publishes every `dominance_scan_quarters` quarters, per firm: (a) its share of private-sector output in each defined market; (b) the count of distinct bottleneck capabilities it controls that are individually above the monopoly test (CAP5); (c) whether it has held a dominant position in any defined market for `monopoly_persistence_years` or more. A firm is a dominance candidate when any one of these holds:
+
+- its share of private-sector output across its markets exceeds `firm_dominance_share_threshold`; or
+- it controls `n_bottleneck` or more distinct bottleneck capabilities above the monopoly test; or
+- it has held a dominant position in a defined market for `monopoly_persistence_years` consecutive years.
+
+Disposition is selected by a pre-registered rule, never by discretion:
+
+| Dominance signal | Prescribed disposition |
+| --- | --- |
+| One bottleneck capability above the monopoly test | Buyout and commons release of that capability at the capped formula (CAP6) |
+| `n_bottleneck` or more distinct bottleneck capabilities above the monopoly test | Structural separation of the bottleneck units into independent entities, plus buyout of the single most systemically critical capability |
+| Dominant in a defined market but no bottleneck capability above the monopoly test | `procurement_dominance_cap` on its share of mission procurement and public contracts |
+| Any of the above | Same disposition regardless of the firm's jurisdiction of ownership (domestic/foreign symmetry) |
+
+Structural separation executes as: (1) identify the firm's bottleneck units — those carrying a capability above the monopoly test; (2) divest each into an independent entity with its own named maintainer and a funded maintenance endowment (C25), such that each released capability is served by at least `separation_min_providers` independent entities; (3) the competitive units remain with the original firm, which may keep operating privately; (4) the new entities are governed so no single holder re-aggregates `n_bottleneck` capabilities (CAP17). The elected chamber may not substitute a lighter disposition for the heavier one the rule prescribes, nor exempt a domestic firm. Appeal lies to the competition tribunal on valuation and classification only.
+
+### CAP17 — Anti-reconcentration
+
+**Claim.** A firm bought out or divested under the dominance or monopoly rules may not, for `reconcentration_years` after the disposition, re-acquire the released capability, acquire a controlling stake in its maintainer, or acquire another firm that would push it above the systemic dominance threshold. Holding `n_bottleneck` or more distinct bottleneck capabilities above the monopoly test is itself a trigger for disposition (CAP16).
+
+**Rationale.** A buyout that the same winner can simply win again is not a correction; it is a subsidy with a press release. The cooling period and the multi-bottleneck trigger close the loop the engine keeps trying to re-open.
+
+**Evidence.** `pending:` pilot market monitoring of recidivism after buyout or divestiture. `study:` recidivism and re-entry patterns after structural remedies.
+
+**Falsifier.** If the cooling period deters legitimate acquisition of maintainers and slows commons maintenance, shorten it to bottleneck units only.
+
+#### Operational procedure
+
+The disposition office keeps a `reconcentration_years` watch list of every firm bought out or divested under CAP16 or the monopoly rules. For `reconcentration_years` after the disposition the firm may not:
+
+- re-acquire the released capability, nor take a controlling stake in its maintainer;
+- acquire another firm if the combined entity would cross the systemic dominance threshold (C49);
+- have an affiliate acquire the maintainer of a released capability.
+
+A breach is a prohibited re-concentration: the acquirer is ordered to divest within a published deadline and the original cooling period restarts from zero. Holding `n_bottleneck` or more distinct bottleneck capabilities above the monopoly test at any time re-triggers disposition (CAP16) independently of the cooling period. The watch list is published every `dominance_scan_quarters` quarters and uses the same market registry as CAP16. If the cooling period deters acquisition of a *non*-bottleneck maintainer, the restriction narrows to bottleneck units only, per the article's falsifier.
+
 ---
 
 ## Parameters
@@ -250,6 +311,12 @@
 | `monopoly_markup_threshold` | 1.5 | ratio to competitive benchmark | `data:` markup calibration against known monopoly cases |
 | `monopoly_persistence_years` | 3 | consecutive years | `pending:` pilot market monitoring |
 | `sole_source_approval_threshold` | 1,000,000 | accounting units | `pending:` procurement register analysis |
+| `firm_dominance_share_threshold` | 0.15 | share of private-sector output | `pending:` firm-level concentration pilot |
+| `procurement_dominance_cap` | 0.25 | share of mission procurement and public contracts | `pending:` pilot calibration |
+| `reconcentration_years` | 5 | years after buyout or divestiture | `pending:` pilot market monitoring |
+| `n_bottleneck` | 3 | distinct bottleneck capabilities | `pending:` pilot market monitoring |
+| `separation_min_providers` | 2 | independent providers of a released capability after separation | `pending:` pilot market monitoring |
+| `dominance_scan_quarters` | 1 | quarters between mandatory dominance scans | `pending:` pilot market monitoring |
 
 **These are the framework's most contestable numbers.** Each is an assumption to be measured in a pilot; a window or share without a current evidence pointer reverts to the conservative default at review (GOVERNANCE.md §10).
 

@@ -1,6 +1,6 @@
 # Social Floor Law (社会兜底法)
 
-> Version 0.1.1 · 2026-10-10 · Status: draft
+> Version 0.1.2 · 2026-10-11 · Status: draft
 > Basis: [Constitution.md](../Constitution.md) C27–C32 · Framework: [FRAMEWORK.md](../FRAMEWORK.md) §2.4, §5 · Process: [GOVERNANCE.md](../GOVERNANCE.md) §10
 > The chassis: what nobody may fall below, how it is indexed, how it is funded, and how it is delivered without humiliation.
 
@@ -8,11 +8,11 @@
 {
   "id": "law.social-floor",
   "title": "Social Floor Law (社会兜底法)",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "status": "draft",
   "adopted": null,
   "pillars": ["floor"],
-  "summary": "Defines the unconditional floor (nutrition and water, housing, health care, education, connectivity and computation, personal security, legal aid, and a cash layer), its universality and non-conditionality, the indexation formula with its band, the funding ranking (rents first, never the innovation being accelerated), delivery and dignity rules (no surveillance means-testing, statutory deadlines, one application, auto-enrolment), the right to useful work at a floor wage, the treatment of children and of changed family status, proportionate anti-fraud rules, and the automatic escalation if adequacy falls.",
+  "summary": "Defines the unconditional floor (nutrition and water, housing, health care, education, connectivity and computation, personal security, legal aid, and a cash layer), its universality and non-conditionality, the indexation formula with its band, the funding ranking (rents first, never the innovation being accelerated), delivery and dignity rules (no surveillance means-testing, statutory deadlines, one application, auto-enrolment), the right to useful work at a floor wage, the treatment of children and of changed family status, proportionate anti-fraud rules, the automatic escalation if adequacy falls, and a progressive elevation staircase (FLR14) that raises κ in funded, scheduled steps as fiscal headroom grows.",
   "articles": [
     { "id": "FLR1", "title": "The eight components", "evidence": ["data:deprivation indices and their health, crime and schooling correlates"], "falsifier": "If a component shows no measurable improvement in the outcome it exists for after two review periods, its delivery method must be redesigned or the component merged." },
     { "id": "FLR2", "title": "Unconditional and universal", "evidence": ["study:Banerjee, Hanna, Kreindler & Olken 2017 (AER, Debunking the Stereotype of the Lazy Welfare Recipient): seven RCTs of cash transfers, no systematic labour-supply reduction"], "falsifier": "If unconditionality measurably reduces participation beyond what health and entrepreneurship gains compensate, the cash layer's size must change (still unconditionally delivered)." },
@@ -26,7 +26,8 @@
     { "id": "FLR10", "title": "Statutory deadlines and one application", "evidence": ["audit:decision latency, applications per household, appeal volumes"], "falsifier": "If deadlines are systematically missed without consequence, they must be enforced by automatic default approval plus audit." },
     { "id": "FLR11", "title": "No family-status trap", "evidence": ["pending:take-up differentials by household composition"], "falsifier": "If household aggregation demonstrably hides need (the working poor within a mixed household), assessment must move to the individual with a published correction." },
     { "id": "FLR12", "title": "Error, fraud and proportionality", "evidence": ["data:fraud rates in universal vs. means-tested systems"], "falsifier": "If recovery enforcement reduces take-up among eligible people more than it recovers, it must be scaled back." },
-    { "id": "FLR13", "title": "Adequacy escalation", "evidence": ["audit:floor adequacy ratio published quarterly"], "falsifier": "If escalation triggers repeatedly without restoring adequacy, the funding ranking has failed and must be reopened." }
+    { "id": "FLR13", "title": "Adequacy escalation", "evidence": ["audit:floor adequacy ratio published quarterly"], "falsifier": "If escalation triggers repeatedly without restoring adequacy, the funding ranking has failed and must be reopened." },
+    { "id": "FLR14", "title": "Progressive elevation staircase", "evidence": ["pending:pilot calibration of elevation rungs, coverage ceilings and lock periods", "model:tools/simulate.mjs indexation sweep"], "falsifier": "If a step raises floor cost faster than the rent base can fund it without distortionary taxes, pause the staircase and reopen the funding ranking (FLR4)." }
   ],
   "parameters": [
     { "name": "kappa_indexation", "value": 0.4, "unit": "floor as share of median disposable income", "evidence": "pending:pilot calibration" },
@@ -35,7 +36,11 @@
     { "name": "vacancy_levy_rate", "value": 2, "unit": "multiplier of annual rate liability per vacant year", "evidence": "pending:first vacancy census" },
     { "name": "floor_wage_multiple", "value": 1.15, "unit": "guaranteed-work wage as multiple of floor", "evidence": "pending:first guarantee cohort" },
     { "name": "guarantee_employment_cap", "value": 0.05, "unit": "share of total employment", "evidence": "pending:first guarantee cohort" },
-    { "name": "decision_deadline_days", "value": 30, "unit": "days for any floor decision", "evidence": "pending:first administrative audit" }
+    { "name": "decision_deadline_days", "value": 30, "unit": "days for any floor decision", "evidence": "pending:first administrative audit" },
+    { "name": "kappa_staircase", "value": "[0.40, 0.45, 0.50, 0.55]", "unit": "ascending adequacy-ratio rungs", "evidence": "pending:pilot calibration of elevation rungs" },
+    { "name": "elevation_coverage_ceiling", "value": 0.60, "unit": "rent-coverage ratio ceiling for unlocking a rung", "evidence": "pending:pilot calibration" },
+    { "name": "elevation_lock_quarters", "value": 4, "unit": "consecutive quarters", "evidence": "pending:pilot calibration" },
+    { "name": "elevation_review_quarters", "value": 1, "unit": "quarters between rung-unlock reviews", "evidence": "pending:pilot calibration" }
   ],
   "metrics": [
     "floor adequacy: floor value as share of median disposable income",
@@ -43,7 +48,8 @@
     "decision latency and appeal volume",
     "deep-poverty rate after transfers",
     "housing: rent-to-income ratio distribution, vacancy rate",
-    "guarantee cohort size, wage, and transition rate to other work"
+    "guarantee cohort size, wage, and transition rate to other work",
+    "floor κ rung vs. next unlock condition (rent-coverage ratio and lock quarters remaining)"
   ],
   "sunset": { "review_every_years": 5, "expires": null },
   "dissent": [
@@ -57,7 +63,9 @@
   ],
   "history": [
     { "version": "0.1.0", "date": "2026-10-10", "change": "Initial draft: eight components, unconditionality, indexation, funding ranking, cash layer, housing, utilities including connectivity and computation, dignity in delivery, useful work, deadlines, family-status protection, proportionate anti-fraud, adequacy escalation." },
-    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." }
+    { "version": "0.1.1", "date": "2026-10-10", "change": "Evidence upgrade: citable literature replaces descriptive pointers (W008 reduction)." },
+    { "version": "0.1.2", "date": "2026-10-11", "change": "Added FLR14 (progressive elevation staircase) defining a stepwise, fiscal-headroom-gated raising of the social floor; added parameters kappa_staircase, elevation_coverage_ceiling, elevation_lock_quarters; added one metric." },
+    { "version": "0.1.3", "date": "2026-10-11", "change": "Made FLR14 operational: added parameter elevation_review_quarters (rung-unlock review cadence); the operational procedure now references it instead of a bare 'quarterly'." }
   ]
 }
 ```
@@ -200,6 +208,31 @@
 
 **Falsifier.** If escalation triggers repeatedly without restoring adequacy, the funding ranking has failed and must be reopened.
 
+### FLR14 — Progressive elevation staircase
+
+**Claim.** The floor adequacy ratio κ follows a published staircase `kappa_staircase` (e.g., 0.40 → 0.45 → 0.50 → 0.55), each rung unlocked only when the rent-coverage ratio (floor cost ÷ rent-base revenue) stays below `elevation_coverage_ceiling` for `elevation_lock_quarters` consecutive quarters. New components or quality upgrades (extended care, longer education, higher compute entitlement) are assigned to specific rungs. The elected chamber may not lower κ below the current rung except by the reversal procedure, which requires the same evidence as raising it.
+
+**Rationale.** Indexation (FLR3) protects the floor from erosion; it does not raise it. A published staircase makes "推高兜底" (raising the floor) a mechanical, falsifiable, direction-bound process: each step is gated on fiscal headroom, so the floor climbs exactly as fast as the rent base allows, and never as a function of the election cycle.
+
+**Evidence.** `pending:` pilot calibration of elevation rungs, coverage ceilings and lock periods. `model:` tools/simulate.mjs indexation sweep.
+
+**Falsifier.** If a step raises floor cost faster than the rent base can fund it without distortionary taxes, pause the staircase and reopen the funding ranking (FLR4).
+
+#### Operational procedure
+
+The fiscal office publishes every `elevation_review_quarters` quarters the rent-coverage ratio = floor cost ÷ rent-base revenue (FLR4). The current rung of `kappa_staircase` is the highest rung `i` for which every rung `1..i` has been unlocked.
+
+A rung `i+1` unlocks when, for `elevation_lock_quarters` consecutive quarters, the rent-coverage ratio has stayed below `elevation_coverage_ceiling` and the floor's fiscal share of GDP has not required distortionary taxes to fund. On unlock, κ rises to `kappa_staircase[i+1]` and the components bound to that rung are activated:
+
+| Rung (κ) | Component or quality upgrade activated |
+| --- | --- |
+| 0.40 | baseline floor (FLR1–FLR13) |
+| 0.45 | extended-care coverage; longer education entitlement |
+| 0.50 | higher compute and connectivity entitlement; longer housing-security period |
+| 0.55 | floor-wage multiple review (FLR9); expanded guarantee cohort |
+
+Reversing a rung — lowering κ below the current rung — requires the same evidence procedure as raising it: the funding ranking (FLR4) is reopened, the review is published, and dissent is recorded. An automatic economic shock that breaks the coverage ceiling does not by itself lower κ; it pauses the next unlock until headroom returns. The elected chamber may not freeze κ below the current rung by a simple vote.
+
 ---
 
 ## Parameters
@@ -213,6 +246,10 @@
 | `floor_wage_multiple` | 1.15 | guaranteed-work wage as multiple of floor | `pending:` first guarantee cohort |
 | `guarantee_employment_cap` | 0.05 | share of total employment | `pending:` first guarantee cohort |
 | `decision_deadline_days` | 30 | days for any floor decision | `pending:` first administrative audit |
+| `kappa_staircase` | [0.40, 0.45, 0.50, 0.55] | ascending adequacy-ratio rungs | `pending:` pilot calibration of elevation rungs |
+| `elevation_coverage_ceiling` | 0.60 | rent-coverage ratio ceiling for unlocking a rung | `pending:` pilot calibration |
+| `elevation_lock_quarters` | 4 | consecutive quarters | `pending:` pilot calibration |
+| `elevation_review_quarters` | 1 | quarters between rung-unlock reviews | `pending:` pilot calibration |
 
 ## Metrics
 

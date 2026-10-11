@@ -1,6 +1,6 @@
 # Constitution of the Open Nation
 
-> **Version 0.2.1 (draft)** · 2026-10-10 · Status: **draft, open for deliberation**
+> **Version 0.2.2 (draft)** · 2026-10-11 · Status: **draft, open for deliberation**
 > Canonical language: English. 中文框架说明见 [FRAMEWORK.zh-CN.md](./FRAMEWORK.zh-CN.md)。
 > This document is not a state. It is a forkable blueprint. Fork it, test it, falsify it.
 
@@ -8,7 +8,7 @@
 {
   "id": "law.constitution",
   "title": "Constitution of the Open Nation",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "status": "draft",
   "adopted": null,
   "pillars": ["governance"],
@@ -35,6 +35,7 @@
     { "id": "C19", "title": "Commons release is the default end state", "evidence": ["study:diffusion speed after patent expiry, compulsory licensing and open-sourcing events"], "falsifier": "If commons release reduces the maintained quality of a capability below its private baseline for more than one review period, a maintenance endowment must be attached by default." },
     { "id": "C20", "title": "Creator and investor share", "evidence": ["pending:creator-share effort response measurement in pilot — the model's creator-share sweep puts the in-cap optimum at this cap, but only under an ASSUMED effort response that has never been measured", "model:tools/simulate.mjs#sweep=beta"], "falsifier": "If creator shares above 10% of realized value do not increase subsequent invention rates, shares should fall to the level that keeps inventors at least as well off as an equivalent salaried career." },
     { "id": "C21", "title": "Capital mobility and erosion control", "evidence": ["data:capital flight response to expropriation vs. to rule-based buyouts"], "falsifier": "If rule-based buyouts with fair valuation still trigger net capital flight exceeding the value of the commons released, compensation terms are insufficient." },
+    { "id": "C49", "title": "Disposition of a dominant firm", "evidence": ["pending:pilot market monitoring — firm-level concentration outcomes and disposition choices", "study:structural-remedy outcomes (Standard Oil 1911, AT&T 1984 divestitures) and their effect on competition"], "falsifier": "If structural separation of dominant firms reduces competition or innovation more than buyout-and-release in a domain, the separation option must be narrowed to bottleneck units only and the menu reduced to buyout." },
     { "id": "C22", "title": "Publicly funded research is public", "evidence": ["study:open-access mandates and their effect on follow-on citation and commercialization"], "falsifier": "If open-by-default public research reduces the rate at which it is commercialized in a domain, that domain may need a short exclusivity window instead of immediate release." },
     { "id": "C23", "title": "Data commons and open standards", "evidence": ["data:GDP cost of standards fragmentation and interoperability failures"], "falsifier": "If mandatory open standards slow the adoption of better protocols in fast-moving domains beyond the measured interoperability gain, standards must become voluntary there." },
     { "id": "C24", "title": "National dividend", "evidence": ["data:Alaska Permanent Fund and sovereign wealth fund distribution effects"], "falsifier": "If an equal per-capita dividend reduces aggregate investment more than it raises floor security and participation, the dividend should shift toward a floor top-up instead of cash." },
@@ -46,6 +47,7 @@
     { "id": "C30", "title": "Funding from rents, not from innovation", "evidence": ["data:land value, resource, spectrum, carbon and data rent shares of GDP"], "falsifier": "If rent-based financing cannot cover the floor at the indexed level, the gap must be closed by the least distortionary available source, and this article's ranking revised with evidence." },
     { "id": "C31", "title": "Right to useful work", "evidence": ["study:employer-of-last-resort and job guarantee pilots"], "falsifier": "If the guarantee crowds out better private employment or becomes a permanent low-wage ghetto, it must be converted into training and placement entitlements." },
     { "id": "C32", "title": "Dignity clause", "evidence": ["data:take-up rates under simple vs. surveilled benefit delivery"], "falsifier": "If surveillance-based delivery achieves lower fraud at no participation cost, this clause is over-restrictive for the non-cash layers." },
+    { "id": "C50", "title": "Progressive floor elevation", "evidence": ["pending:pilot calibration of elevation rungs, coverage ceilings and lock periods", "model:tools/simulate.mjs indexation sweep"], "falsifier": "If raising the adequacy ratio kappa in scheduled steps reduces investment or raises the floor's fiscal share beyond the rent base without improving the capability index, the staircase must be re-derived or paused." },
     { "id": "C33", "title": "Open ledger", "evidence": ["audit:completeness and freshness of the national ledger, checked by an independent auditor"], "falsifier": "If the ledger is not measurably used in deliberation or market decisions, it is theatre and should be reduced to the few datasets actually used." },
     { "id": "C34", "title": "Deliberation architecture", "evidence": ["study:sortition citizens' assemblies — quality of decisions and legitimacy"], "falsifier": "If sortition assemblies produce decisions indistinguishable from random or consistently worse than expert panels on the metric suite, their role must shrink to oversight." },
     { "id": "C35", "title": "Capability dashboard", "evidence": ["model:tools/simulate.mjs — scenario ranking differs between the capability index and the output/GDP measures (command leads output; framework leads capability)"], "falsifier": "If the capability index never diverges from GDP in a way that changes a decision, it is redundant and should be dropped." },
@@ -90,7 +92,8 @@
   "history": [
     { "version": "0.1.0", "date": "2022-08-13", "change": "Seed: Development Law with five rules on technology, monopoly, nationalization and standards." },
     { "version": "0.2.0", "date": "2026-10-10", "change": "Restructured into eight chapters; added instrument doctrine, Five Lines evidence rule, steering layer, capital engine, commons layer, social floor, feedback ledger, governance and staged adoption. Operations moved to laws/." },
-    { "version": "0.2.1", "date": "2026-10-10", "change": "Evidence corrections and register update, no rule text changed: seven laws added to the register (tax, currency, elections, criminal, immigration, environment, transition); C3 and C20 evidence pointers corrected (C20 now cites the simulation's creator-share sweep and keeps its pending anchor); C46 links the pilot charter." }
+    { "version": "0.2.1", "date": "2026-10-10", "change": "Evidence corrections and register update, no rule text changed: seven laws added to the register (tax, currency, elections, criminal, immigration, environment, transition); C3 and C20 evidence pointers corrected (C20 now cites the simulation's creator-share sweep and keeps its pending anchor); C46 links the pilot charter." },
+    { "version": "0.2.2", "date": "2026-10-11", "change": "Added C49 (disposition of a dominant firm) and C50 (progressive floor elevation): C49 answers what to do when one company wins and monopolises the market under capital dynamics (buyout, structural separation, or procurement cap, by pre-registered criteria); C50 defines a stepwise, fiscal-headroom-gated raising of the social floor. Operating parameters live in the engine and floor laws." }
   ]
 }
 ```
@@ -200,7 +203,7 @@ Everything else in this document exists to make that sentence operational and fa
 
 ---
 
-## Chapter 2 — Macro Steering (宏观引导: the helm)
+## Chapter 2 — Macro Steering (the helm)
 
 > Operational rules: [laws/Direction_Law.md](./laws/Direction_Law.md)
 
@@ -266,7 +269,7 @@ Everything else in this document exists to make that sentence operational and fa
 
 ---
 
-## Chapter 3 — Capital Engine (资本动力: the engine)
+## Chapter 3 — Capital Engine (the engine)
 
 > Operational rules: [laws/Capital_Engine_Law.md](./laws/Capital_Engine_Law.md), [laws/Development_Law.md](./laws/Development_Law.md), [laws/Earn_and_Pay_Law.md](./laws/Earn_and_Pay_Law.md)
 
@@ -340,9 +343,22 @@ Everything else in this document exists to make that sentence operational and fa
 
 **Falsifier.** If rule-based buyouts with fair valuation still trigger net capital flight exceeding the value of the commons released, compensation terms are insufficient.
 
+### C49 — Disposition of a dominant firm
+
+**Claim.** Capital may produce a single winner. When one firm crosses a systemic dominance threshold — a share of private-sector output above `firm_dominance_share_threshold`, or control of `n_bottleneck` or more distinct bottleneck capabilities each already above the monopoly test, or persistent dominance of a defined market — the nation may apply one of a published menu of dispositions, chosen by pre-registered criteria, not by discretion: (a) buyout and commons release of the bottleneck capability at the capped formula (C18); (b) structural separation — divestiture of the firm's bottleneck units into independent entities, its competitive units remaining private; (c) a cap on the firm's share of mission procurement and public contracts. No disposition may favour a domestic firm; the national-champion doctrine is explicitly prohibited.
+
+**Rationale.** The founding commitment is that monopoly is a failure of accumulation: once a capability is a monopoly, it is bought out and open-sourced. The engine's winner-take-all dynamic is accepted as the price of speed, but the *firm* that repeatedly wins must not become a permanent toll-keeper. The per-capability test (C18) answers "what if one capability is monopolised"; this article answers "what if one company wins the market."
+
+**Evidence.** `pending:` pilot market monitoring — firm-level concentration outcomes and disposition choices. `study:` structural-remedy outcomes (Standard Oil 1911, AT&T 1984 divestitures) and their effect on competition and downstream innovation.
+
+**Falsifier.** If structural separation of dominant firms reduces competition or innovation more than buyout-and-release in a domain, the separation option must be narrowed to bottleneck units only and the menu reduced to buyout.
+
+#### Operational note
+The dominance test, the pre-registered disposition-selection rule, the structural-separation steps, and the anti-reconcentration watch list are specified in Capital_Engine_Law CAP16 and CAP17.
+
 ---
 
-## Chapter 4 — Commons (全民共享: the transmission)
+## Chapter 4 — Commons (the transmission)
 
 > Operational rules: [laws/Commons_Law.md](./laws/Commons_Law.md)
 
@@ -398,7 +414,7 @@ Everything else in this document exists to make that sentence operational and fa
 
 ---
 
-## Chapter 5 — Social Floor (社会兜底: the chassis)
+## Chapter 5 — Social Floor (the chassis)
 
 > Operational rules: [laws/Social_Floor_Law.md](./laws/Social_Floor_Law.md), [laws/Health_Care_Law.md](./laws/Health_Care_Law.md), [laws/Education_Law.md](./laws/Education_Law.md)
 
@@ -462,9 +478,22 @@ Everything else in this document exists to make that sentence operational and fa
 
 **Falsifier.** If surveillance-based delivery achieves lower fraud at no participation cost, this clause is over-restrictive for the non-cash layers.
 
+### C50 — Progressive floor elevation
+
+**Claim.** The floor is not only indexed to productivity (C29); it is raised in deliberate, scheduled steps as the economy's fiscal headroom grows. A published staircase raises the adequacy ratio κ and may add components or quality upgrades in sequence, each rung unlocked only when the rent-coverage ratio (floor cost ÷ rent-base revenue) stays below `elevation_coverage_ceiling` for `elevation_lock_quarters` consecutive quarters. Reversing a rung requires the same evidence procedure that raised it.
+
+**Rationale.** Indexation (C29) keeps the floor from quietly shrinking; it does not, by itself, push the floor up as the society's capacity grows. Deliberate elevation is what converts rising capability into rising security. But it must be funded, so each step is gated on fiscal headroom, never on a vote alone — the same rent-first funding ranking that protects the engine (C30) also bounds how fast the floor can climb.
+
+**Evidence.** `pending:` pilot calibration of elevation rungs, coverage ceilings and lock periods. `model:` tools/simulate.mjs indexation sweep.
+
+**Falsifier.** If raising the adequacy ratio κ in scheduled steps reduces investment or raises the floor's fiscal share beyond the rent base without improving the capability index, the staircase must be re-derived or paused.
+
+#### Operational note
+The rent-coverage calculation, the rung-unlock procedure, the component-to-rung binding, and the reversal rule are specified in Social_Floor_Law FLR14.
+
 ---
 
-## Chapter 6 — Feedback and Collective Intelligence (集体意识)
+## Chapter 6 — Feedback and Collective Intelligence
 
 > Operational rules: [GOVERNANCE.md](./GOVERNANCE.md)
 
